@@ -9,7 +9,6 @@ if (!isset($_SESSION)) {
 }
 
 if (isset($_FILES)) {
-  echo "ta mere";
 }
 
   if ($_FILES && $_POST) {
