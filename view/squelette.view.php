@@ -41,7 +41,7 @@ class squelette{
         </ul>
         </li>
         '.$menuInscription.'
-        <li><a href="#" aria-haspopup="true">ACTUALITES</a></li>
+        <li><a href="../controler/actu.ctrl.php" aria-haspopup="true">ACTUALITES</a></li>
         <li><a href="#" aria-haspopup="true">CONTACT</a></li>
         <li><a href="#" aria-haspopup="true">COMMENT NOUS AIDER</a></li>
         </ul>
@@ -53,14 +53,43 @@ class squelette{
 //
     if (!$connecte) {
 
-      $footerInscription = '<li><a href="#">S\'inscrire</a></li>';
+      $footerInscription = '<li><a href="../controler/user.ctrl.php?action=signup" aria-haspopup="true">S\'inscrire</a></li>';
       $menuInscription = '<li><a href="../controler/user.ctrl.php?action=signup" aria-haspopup="true">S\'INSCRIRE</a></li>';
       $bouton = '
       <form action="../controler/user.ctrl.php">
           <button class="login"><i class="fa fa-sign-in"></i> Se connecter </button>
       </form>
       ';
-      $this->navbar = $navbarAccueil;
+      $this->navbar = '
+          <div class="navbar">
+          <ul>
+          <li><a href="../controler/main.ctrl.php">ACCUEIL</a></li>
+          <li><a href="#" aria-haspopup="true">LA VIE AU CLUB</a>
+          <ul class="dropdown" aria-label="submenu">
+          <li><a href="#">HISTORIQUE</a></li>
+          </ul>
+          </li>
+          <li><a href="#" aria-haspopup="true">SPORTS</a>
+          <ul class="dropdown" aria-label="submenu">
+          <li><a href="#">HOCKEY</a></li>
+          <li><a href="#">ESCRIME</a></li>
+          <li><a href="#">PARATENNIS</a></li>
+          <li><a href="#">TORBALL</a></li>
+          <li><a href="#">NATATION</a>
+          <ul class="dropdown2" aria-label="submenu">
+          <li><a href="#">ECOLE DE NATATION</a></li>
+          <li><a href="#">NATATION ADULTE (HANDI NATATION)</a></li>
+          </ul>
+          </li>
+          <li><a href="#">SKI ALPIN</a></li>
+          </ul>
+          </li>
+          '.$menuInscription.'
+          <li><a href="../controler/actu.ctrl.php" aria-haspopup="true">ACTUALITES</a></li>
+          <li><a href="#" aria-haspopup="true">CONTACT</a></li>
+          <li><a href="#" aria-haspopup="true">COMMENT NOUS AIDER</a></li>
+          </ul>
+          </div>';
     }
 
 //
@@ -92,7 +121,7 @@ class squelette{
             <ul>
             <li><a href="../controler/main.ctrl.php">ACCUEIL</a></li>
             <li><a href="../controler/main.ctrl.php">AGENDA</a></li>
-            <li><a href="../controler/main.ctrl.php">COMMUNICATION</a></li>
+            <li><a href="../controler/communication.ctrl.php">COMMUNICATION</a></li>
             <li><a href="#" aria-haspopup="true">DEMANDES D\'INSCRIPTION</a></li>
             </ul>
             </div>';
@@ -104,7 +133,7 @@ class squelette{
             <ul>
             <li><a href="../controler/main.ctrl.php">ACCUEIL</a></li>
             <li><a href="../controler/main.ctrl.php">AGENDA</a></li>
-            <li><a href="../controler/main.ctrl.php">ACTUALITES</a></li>
+            <li><a href="../controler/actu.ctrl.php">ACTUALITES</a></li>
             <li><a href="#" aria-haspopup="true">CONTACT</a></li>
             </ul>
             </div>';
@@ -113,11 +142,39 @@ class squelette{
 
       }
       else {
-        $this->navbar = $navbarAccueil;
+        $this->navbar = '
+            <div class="navbar">
+            <ul>
+            <li><a href="../controler/main.ctrl.php">ACCUEIL</a></li>
+            <li><a href="#" aria-haspopup="true">LA VIE AU CLUB</a>
+            <ul class="dropdown" aria-label="submenu">
+            <li><a href="#">HISTORIQUE</a></li>
+            </ul>
+            </li>
+            <li><a href="#" aria-haspopup="true">SPORTS</a>
+            <ul class="dropdown" aria-label="submenu">
+            <li><a href="#">HOCKEY</a></li>
+            <li><a href="#">ESCRIME</a></li>
+            <li><a href="#">PARATENNIS</a></li>
+            <li><a href="#">TORBALL</a></li>
+            <li><a href="#">NATATION</a>
+            <ul class="dropdown2" aria-label="submenu">
+            <li><a href="#">ECOLE DE NATATION</a></li>
+            <li><a href="#">NATATION ADULTE (HANDI NATATION)</a></li>
+            </ul>
+            </li>
+            <li><a href="#">SKI ALPIN</a></li>
+            </ul>
+            </li>
+            '.$menuInscription.'
+            <li><a href="../controler/actu.ctrl.php" aria-haspopup="true">ACTUALITES</a></li>
+            <li><a href="#" aria-haspopup="true">CONTACT</a></li>
+            <li><a href="#" aria-haspopup="true">COMMENT NOUS AIDER</a></li>
+            </ul>
+            </div>';
       }
 
     }
-
 
 
 
@@ -173,7 +230,7 @@ class squelette{
             <li><a href="#">La vie du club</a></li>
             <li><a href="#">Sports</a></li>
             '.$footerInscription.'
-            <li><a href="#">Actualités</a></li>
+            <li><a href="../controler/user.ctrl.php">Actualités</a></li>
             <li><a href="#">Contact</a></li>
             <li><a href="#">Comment nous aider</a></li>
           </ul>
