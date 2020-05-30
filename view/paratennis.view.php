@@ -10,7 +10,7 @@ if (isset($_SESSION['user'])) {
   $connecte = false;
 }
 
-$squelette = new squelette('stylesheet2.css',$connecte,'accueil');
+$squelette = new squelette('stylesheet.css',$connecte,'accueil');
 
 echo "$squelette->header"; //HEAD + HEADER + BALISE BODY OUVRANTE
 
