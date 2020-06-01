@@ -9,15 +9,26 @@ if (isset($_SESSION['user'])) {
   $connecte = false;
 }
 
-$squelette = new squelette('stylesheet.css',$connecte,'espacePerso');
+$squelette = new squelette('stylesheet.css',$connecte,'actu');
 
 echo "$squelette->header"; //HEAD + HEADER + BALISE BODY OUVRANTE
 
- ?>
+?>
 
- <!-- ================================================ -->
- <!-- ================================================ -->
+<!-- ================================================ -->
+<!-- ================================================ -->
 
+<?php foreach ($articles as $key => $value): ?>
+
+  <div class="ligne">
+    <?php
+    $case = $value->getcorps();
+    echo "$case";
+    ?>
+
+  </div>
+
+<?php endforeach; ?>
 
 
 
@@ -29,4 +40,4 @@ echo "$squelette->header"; //HEAD + HEADER + BALISE BODY OUVRANTE
 
 echo "$squelette->footer"; //FOOTER + BALISE BODY FERMANTE
 
- ?>
+?>
