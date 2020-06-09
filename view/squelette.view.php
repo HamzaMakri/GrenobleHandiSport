@@ -120,7 +120,7 @@ class squelette{
             <div class="navbar">
             <ul>
             <li><a href="../controler/main.ctrl.php">ACCUEIL</a></li>
-            <li><a href="../controler/main.ctrl.php">AGENDA</a></li>
+            <li><a href="../ztest/public/index.php">AGENDA</a></li>
             <li><a href="../controler/communication.ctrl.php">COMMUNICATION</a></li>
             <li><a href="#" aria-haspopup="true">DEMANDES D\'INSCRIPTION</a></li>
             </ul>
@@ -132,7 +132,7 @@ class squelette{
             <div class="navbar">
             <ul>
             <li><a href="../controler/main.ctrl.php">ACCUEIL</a></li>
-            <li><a href="../controler/main.ctrl.php">AGENDA</a></li>
+            <li><a href="../ztest/public/index.php">AGENDA</a></li>
             <li><a href="../controler/actu.ctrl.php">ACTUALITES</a></li>
             <li><a href="#" aria-haspopup="true">CONTACT</a></li>
             </ul>
