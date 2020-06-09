@@ -13,9 +13,9 @@
   }
 
   function get_pdo (): PDO {
-      return new \PDO('mysql:host=localhost;dbname=tutocalendar', 'root', 'root', [
-          PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-          PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+      return new \PDO('mysql:host=localhost;dbname=grenoblehandisport', 'root', '', [
+          \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
+          \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC
       ]);
   }
 
