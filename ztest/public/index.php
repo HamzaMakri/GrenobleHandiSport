@@ -12,7 +12,7 @@
     $end = (clone $start)->modify('+'. (6+7*($weeks-1)) .' days');
     $events = $events->getEventsBetweenByDay($start,$end );
     require '../views/header.php';
-    //var_dump($events);
+    var_dump($events);
      ?>
 
 <div class="d-flex flex-row align-items-center justify-content-between mx-sm-3">
