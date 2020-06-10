@@ -1,4 +1,6 @@
 <?php
+  require '../vendor/autoload.php';
+
   function e404(){
     require ('../public/404.php');
     exit();
@@ -24,5 +26,10 @@
           return '';
       }
       return htmlentities($value);
+  }
+
+  function render(string $view, $parameters = []) {
+      extract($parameters);
+      include "../views/{$view}.php";
   }
  ?>
