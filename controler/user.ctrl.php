@@ -28,7 +28,7 @@ if (isset($_GET['action']) ) {
 
       // echo "email : $email     //     mdp:       $password";
 
-      $db = new MyDB();
+      $db = new MyDB2();
       // if(!$db){
       //    echo $db->lastErrorMsg();
       // } else {
@@ -40,21 +40,22 @@ if (isset($_GET['action']) ) {
       $debMail = substr($email, 0, strpos($email, "@"));
       $finMail = substr($email, strpos($email, "@")+1, strlen($email));
 
-      $result = $db->query("SELECT mdp FROM USER WHERE email ='".$debMail."@".$finMail."'".';');
-      $bddMDP = $result->fetchArray();
+      $result = $db->getPdo()->query("SELECT mdp FROM USER WHERE mail ='".$debMail."@".$finMail."'".';');
+      $bddMDP = $result->fetch();
 
-      if ($bddMDP[0] == $password){
 
-        $result = $db->query("SELECT nom FROM USER WHERE email ='".$debMail."@".$finMail."'".';');
-        $bddNom = $result->fetchArray();
+      if ($bddMDP['mdp'] == $password){
 
-        $result = $db->query("SELECT id FROM USER WHERE email ='".$debMail."@".$finMail."'".';');
-        $bddId = $result->fetchArray();
+        $result = $db->getPdo()->query("SELECT nom FROM USER WHERE mail ='".$debMail."@".$finMail."'".';');
+        $bddNom = $result->fetch();
 
-        $result = $db->query("SELECT statut FROM USER WHERE email ='".$debMail."@".$finMail."'".';');
-        $bddStatut = $result->fetchArray();
+        $result = $db->getPdo()->query("SELECT id FROM USER WHERE mail ='".$debMail."@".$finMail."'".';');
+        $bddId = $result->fetch();
 
-        $_SESSION['user'] = new User($bddNom[0],$email,$bddId[0],$bddStatut[0]);
+        $result = $db->getPdo()->query("SELECT statut FROM USER WHERE mail ='".$debMail."@".$finMail."'".';');
+        $bddStatut = $result->fetch();
+
+        $_SESSION['user'] = new User($bddNom['nom'],$email,$bddId['id'],$bddStatut['statut']);
         //var_dump($_SESSION['user']);
         $connexionOK = true;
         header('location: ../controler/main.ctrl.php');
@@ -64,7 +65,7 @@ if (isset($_GET['action']) ) {
       }
       $view->assign('connexionOK',$connexionOK);
     }
-    $db->close();
+    $db = NULL; // pour fermer la connexion
 
   }
 }
@@ -78,20 +79,33 @@ if (isset($_GET['action']) ) {
 // =========================== INSCRIPTION =========================== //
 // =================================================================== //
 
-if (isset($_GET['action']) ) {
-  if ($_GET['action'] == 'signup') {
-    if (isset($_REQUEST['name']) && isset($_REQUEST['age']) && isset($_REQUEST['email'] ) && isset($_REQUEST['password'])) {
+
+
+    if (isset($_REQUEST['name'])) {
 
       $name=$_REQUEST['name'];
-      $age=$_REQUEST['age'];
-      $email=$_REQUEST['email'];
-      $password=$_REQUEST['password'];
+      $prenom= $_REQUEST['prenom'];
+      $sexe= $_REQUEST['sexe'];
+      $datenaiss= $_REQUEST['datenaiss'];
+      $adresse= $_REQUEST['adresse'];
       $statut=$_REQUEST['statut'];
+      $tel= $_REQUEST['tel'];
+      if (isset($_REQUEST['certif'])) {
+        $attestationmedicale = $_REQUEST['certif'];
+      }
+      $sport= $_REQUEST['sports']; //tableau de plusieurs sports
+      $email= $_REQUEST['email'];
+      $password= $_REQUEST['password'];
+      $profession= $_REQUEST['profession'];
+      $nationalite= $_REQUEST['nationalite'];
+      if (isset($_REQUEST['handicap'])) {
+        $handicap= $_REQUEST['handicap'];
+      }
 
 
-      // echo "nom : $name  //  age : $age    //  email : $email     //     mdp:       $password";
 
-      $db = new MyDB();
+
+      $db = new MyDB2();
       // if(!$db){
       //    echo $db->lastErrorMsg();
       // } else {
@@ -104,35 +118,96 @@ if (isset($_GET['action']) ) {
       $finMail = substr($email, strpos($email, "@")+1, strlen($email));
 
 
-      $result = $db->query("SELECT email FROM USER WHERE email ='".$debMail."@".$finMail."'".';');
-      $bddEmail = $result->fetchArray();
-      //var_dump($bddEmail[0]);
+      $result = $db->getPdo()->query("SELECT mail FROM inscription WHERE mail ='".$debMail."@".$finMail."'".';');
+      $bddEmail = $result->fetch();
 
-      if($bddEmail[0] == $email ){
+      if($bddEmail['mail'] == $email ){            ///////////////// $bddEmail['email'] ??
         $inscriptionOK = false;
         $view->assign('inscriptionOK',$inscriptionOK);
       }
       else{
-        $result = $db->query("SELECT id FROM user ORDER BY id DESC LIMIT 1;");
-        $idmax = $result->fetchArray();
 
-        $sql =<<<EOF
-        INSERT INTO user (ID,NOM,AGE,EMAIL,MDP,STATUT)
-        VALUES ($idmax[0]+1, '$name', '$age', '$email', '$password', '$statut' );
-        EOF;
-        $ret = $db->exec($sql);
-        if(!$ret){
-          echo $db->lastErrorMsg();
-        } else {
-          // echo "OK\n";
+        if (isset($attestationmedicale) && isset($handicap)) {
+
+          $sql = "INSERT INTO inscription (sexe,nom,prenom,mail,mdp,dateNaiss,nationalite,profession,tel,adresse,statut,handicap,attestationmedicale) VALUES (:sexe,:nom,:prenom,:mail,:mdp,:dateNaiss,:nationalite,:profession,:tel,:adresse,:statut,:handicap,:attestationmedicale )";
+          $result = $db->getPdo()->prepare($sql);
+          $result->execute(array(
+
+            ':sexe' => $sexe,
+            ':nom' => $name,
+            ':prenom' => $prenom,
+            ':mail' => $email,
+            ':mdp' => $password,
+            ':dateNaiss' => $datenaiss,
+            ':nationalite' => $nationalite,
+            ':profession' => $profession,
+            ':tel' => $tel,
+            ':adresse' => $adresse,
+            ':statut' => $statut,
+            ':handicap' => $handicap,
+            ':attestationmedicale' => $attestationmedicale
+          ));
+
+        } elseif (isset($attestationmedicale)) {
+
+          $sql = "INSERT INTO inscription (sexe,nom,prenom,mail,mdp,dateNaiss,nationalite,profession,tel,adresse,statut,attestationmedicale) VALUES (:sexe,:nom,:prenom,:mail,:mdp,:dateNaiss,:nationalite,:profession,:tel,:adresse,:statut,:attestationmedicale )";
+          $result = $db->getPdo()->prepare($sql);
+          $result->execute(array(
+            ':sexe' => $sexe,
+            ':nom' => $name,
+            ':prenom' => $prenom,
+            ':mail' => $email,
+            ':mdp' => $password,
+            ':dateNaiss' => $datenaiss,
+            ':nationalite' => $nationalite,
+            ':profession' => $profession,
+            ':tel' => $tel,
+            ':adresse' => $adresse,
+            ':statut' => $statut,
+            ':attestationmedicale' => $attestationmedicale
+          ));
+
+        }else {
+          $sql = "INSERT INTO inscription (sexe,nom,prenom,mail,mdp,dateNaiss,nationalite,profession,tel,adresse,statut,handicap) VALUES (:sexe,:nom,:prenom,:mail,:mdp,:dateNaiss,:nationalite,:profession,:tel,:adresse,:statut,:handicap)";
+          $result = $db->getPdo()->prepare($sql);
+          $result->execute(array(
+
+            ':sexe' => $sexe,
+            ':nom' => $name,
+            ':prenom' => $prenom,
+            ':mail' => $email,
+            ':mdp' => $password,
+            ':dateNaiss' => $datenaiss,
+            ':nationalite' => $nationalite,
+            ':profession' => $profession,
+            ':tel' => $tel,
+            ':adresse' => $adresse,
+            ':statut' => $statut,
+            ':handicap' => $handicap
+          ));
         }
+
+        // FAIRE UN SELECT DU NUM d'INSCRIPTION
+        $result = $db->getPdo()->query("SELECT MAX(numInscript) FROM inscription ");
+        $num = $result->fetch();
+        $num = $num['MAX(numInscript)'];
+
+
+        foreach ($sport as $value) {
+          $sql2 = "INSERT INTO inscriptionsport (nomsport, numInscript) VALUES (:nomsport, :numInscript)";
+          $result = $db->getPdo()->prepare($sql2);
+          $result->execute(array(
+            ':nomsport' => $value,
+            ':numInscript' => $num
+          ));
+        }
+
         $inscriptionOK = true;
         header('location: ../controler/user.ctrl.php?insc=ok');
       }
-      $db->close();
+      $db = NULL; // pour fermer la connexion
     }
-  }
-}
+
 
 // =================================================================== //
 // =================================================================== //

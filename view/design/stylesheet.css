@@ -1,4 +1,14 @@
 
+form{
+  margin:50px;
+}
+
+
+form > fieldset{
+  margin-bottom:  50px;
+}
+
+
 header{
 
   /*A SUPPRIMER SI PROBLEMES*/

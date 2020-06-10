@@ -12,20 +12,20 @@ $squelette = new squelette('stylesheet.css',$connecte,'user');
 
 echo "$squelette->header"; //HEAD + HEADER + BALISE BODY OUVRANTE
 
- ?>
+?>
 
- <!-- ================================================ -->
- <!-- ================================================ -->
+<!-- ================================================ -->
+<!-- ================================================ -->
 
- <?php if ($connecte): ?>
+<?php if ($connecte): ?>
   <h1>VOUS ETES DEJA CONNECTE !</h1>
 <?php else: ?>
 
 
   <div class="sign">
 
-   <a href="user.ctrl.php?action=signin" class="in"><i class="fa fa-sign-in"></i> Se connecter</a>
-   <a href="user.ctrl.php?action=signup" class="up"><i class="fa fa-user-plus"></i> S'inscrire</a>
+    <a href="user.ctrl.php?action=signin" class="in"><i class="fa fa-sign-in"></i> Se connecter</a>
+    <a href="user.ctrl.php?action=signup" class="up"><i class="fa fa-user-plus"></i> S'inscrire</a>
 
 
   </div>
@@ -42,16 +42,16 @@ echo "$squelette->header"; //HEAD + HEADER + BALISE BODY OUVRANTE
       <br>
 
       <form  action="" method="POST" enctype="multipart/form-data">
-       <input type="hidden" name="action" value="submit" required="required">
+      <input type="hidden" name="action" value="submit" required="required">
 
-       Votre email:<br>
-       <input name="email" type="email" value="" size="30" required="required"><br>
+      Votre email:<br>
+      <input name="email" type="email" value="" size="30" required="required"><br>
 
-       Votre mot de passe:<br>
-       <input name="password" type="password" value="" size="30" required="required"><br><br><br>
+      Votre mot de passe:<br>
+      <input name="password" type="password" value="" size="30" required="required"><br><br><br>
 
-       <input type="submit" value="Submit"/>
-       </form>
+      <input type="submit" value="Submit"/>
+      </form>
 
       ';
 
@@ -81,45 +81,151 @@ echo "$squelette->header"; //HEAD + HEADER + BALISE BODY OUVRANTE
   }
 
 
-  if (isset($_GET['action']) ) {
-    if ($_GET['action'] == 'signup') {
+  if (isset($_GET['action']) ) :
+    if ($_GET['action'] == 'signup'): ?>
 
-      echo '
+    <p>Veuillez renseigner vos informations dans les champs ci-dessous et joindre les documents nécessaire, nous vous assurons la confidentialité de vos informations et la protection de vos données. Une fois ce formulaire remplis, nous vous recontacterons afin de prendre rendez-vous et finaliser l’inscription</p> <br>
 
-  <p>Veuillez renseigner vos informations dans les champs ci-dessous et joindre les documents nécessaire, nous vous assurons la confidentialité de vos informations et la protection de vos données. Une fois ce formulaire remplis, nous vous recontacterons afin de prendre rendez-vous et finaliser l’inscription</p> <br>
+    <br>
 
-  <br>
+    <p> <b> =============== tel quel, la page d\'inscription crée directement un compte =============== </b> <p>
 
-  <p> <b> =============== tel quel, la page d\'inscription crée directement un compte =============== </b> <p>
+      <br>
 
-  <br>
 
-      <form  action="" method="POST" enctype="multipart/form-data">
-       <input type="hidden" name="action" value="submit" required="required">
+      <form  action="../controler/user.ctrl.php?action=signup" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="action" value="submit" required="required">
 
-       Votre nom:<br>
-       <input name="name" type="text" value="" size="30" required="required"/><br>
+        <fieldset>
 
-       Votre Age:<br>
-       <input name="age" type="number" value="" size="30" required="required"/><br>
+          <legend>INFORMATIONS PERSONNELLES</legend>
 
-       Le statut <b>(disponible uniquement pour tester les differents statuts)</b> :<br>
-       <input name="statut" type="text" value="" size="30" required="required"/><br>
+          <label for="name">Nom :</label>
+          <input id="name" name="name" type="text"  size="30" required="required"/><br>
 
-       Votre email:<br>
-       <input name="email" type="email" value="" size="30" required="required"/><br>
+          <label for="prenom">Prenom :</label>
+          <input id="prenom" name="prenom" type="text" size="30" required="required"/><br>
 
-       Votre mot de passe:<br>
-       <input name="password" type="password" value="" size="30" required="required"/><br><br><br>
+          <label for="sexe">Sexe :</label>
+          <input type="radio" id="homme" name="sexe" value="h" checked>
+          <label for="homme">Homme</label>
+          <input type="radio" id="femme" name="gender" value="f">
+          <label for="femme">Femme</label><br>
 
-       <input type="submit" value="Submit"/>
-       </form>
+          <label for="datenaiss">Date de naissance :</label>
+          <input name="datenaiss" type="date" size="30" required="required"/><br>
 
-      ';
+          <label for="nationalite">Nationalité :</label>
+          <input id="nationalite" name="nationalite" type="text" size="30" required="required"/><br>
 
-    }
-  }
-?>
+          <label for="profession">Profession :</label>
+          <input id="profession" name="profession" type="text" size="30" required="required"/><br>
+
+          <label for="handicap">Handicap (vous n'êtes pas obligé de renseigner cette information) :</label>
+          <input id="handicap" name="handicap" type="text" size="30"/><br>
+
+          <label for="adresse">Adresse postale complete :</label>
+          <input type="text" name="adresse" size="100" required><br>
+
+          <label for="statut">Statut :</label>
+          <input type="radio" id="adh" name="statut" value="adherent" required checked>
+          <label for="adh">Ahdérent</label>
+          <input type="radio" id="bene" name="statut" value="benevole">
+          <label for="bene">Bénévole</label><br>
+
+          <label for="tel">Numero de téléphone:</label>
+          <input type="tel" id="tel" name="tel" pattern="[0-9]{10}" required> <br>
+
+          <label for="certif">Certificat médical  :</label>
+          <input id="certif" type="file" name="certif" accept="image/*|.pdf" required="required"/>
+
+        </fieldset>
+
+        <fieldset>
+
+          <legend>SPORTS</legend>
+
+          <fieldset>
+
+            <legend>En loisir</legend>
+
+            <label for="escrimeloisir">
+              <input type="checkbox" id="escrimeloisir" name="sports[]" value="escrimeloisir"> Escrime en loisir
+            </label><br>
+
+            <label for="hockeyloisir">
+              <input type="checkbox" id="hockeyloisir" name="sports[]" value="hockeyloisir"> Hockey Fauteuil en loisir
+            </label><br>
+
+            <label for="natationloisir">
+              <input type="checkbox" id="natationloisir" name="sports[]" value="natationloisir">  Natation en loisir
+            </label><br>
+
+            <label for="skiloisir">
+              <input type="checkbox" id="skiloisir" name="sports[]" value="skiloisir"> Ski Alpin en loisir
+            </label><br>
+
+            <label for="tennisloisir">
+              <input type="checkbox" id="tennisloisir" name="sports[]" value="tennisloisir"> Tennis en loisir
+            </label><br>
+
+            <label for="torballloisir">
+              <input type="checkbox" id="torballloisir" name="sports[]" value="torballloisir"> Torball en loisir
+            </label><br>
+
+          </fieldset>
+
+          <fieldset>
+
+            <legend>En competition</legend>
+
+            <label for="escrimecompet">
+              <input type="checkbox" id="escrimecompet" name="sports[]" value="escrimecompet"> Escrime en compétition
+            </label><br>
+
+            <label for="hockeycompet">
+              <input type="checkbox" id="hockeycompet" name="sports[]" value="hockeycompet"> Hockey Fauteuil en compétition
+            </label><br>
+
+            <label for="natationcompet">
+              <input type="checkbox" id="natationcompet" name="sports[]" value="natationcompet"> Natation en compétition
+            </label><br>
+
+            <label for="skicompet">
+              <input type="checkbox" id="skicompet" name="sports[]" value="skicompet"> Ski Alpin en compétition
+            </label><br>
+
+            <label for="tenniscompet">
+              <input type="checkbox" id="tenniscompet" name="sports[]" value="tenniscompet"> Tennis en compétition
+            </label><br>
+
+            <label for="torballcompet">
+              <input type="checkbox" id="torballcompet" name="sports[]" value="torballcompet"> Torball en compétition
+            </label><br>
+
+          </fieldset>
+
+        </fieldset>
+
+        <fieldset>
+          <legend>IDENTIFIANTS ET MOT DE PASSE</legend>
+          <label for="email">Mail :</label>
+          <input name="email" type="email" size="30" required="required"/><br>
+
+          <label for="password">Mot de passe :</label>
+          <input name="password" type="password" value="" size="30" required="required"/><br><br><br>
+        </fieldset>
+
+        <input type="submit" value="Valider"/>
+
+      </form>
+
+
+      <?php
+    endif;
+  endif;
+
+  ?>
 
 <?php endif; ?>
 
@@ -134,4 +240,4 @@ echo "$squelette->header"; //HEAD + HEADER + BALISE BODY OUVRANTE
 
 echo "$squelette->footer"; // BALISE BODY FERMANTE + FOOTER
 
- ?>
+?>

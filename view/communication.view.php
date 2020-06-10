@@ -39,7 +39,7 @@ echo "$squelette->header"; //HEAD + HEADER + BALISE BODY OUVRANTE
       <label for="subject">Texte :</label><br>
       <textarea id="subject" name="texte" placeholder="Ecrire ici le contenu de l'article" rows="10" cols="150" ></textarea><br>
 
-      <input type="submit" value="Submit">
+      <input type="submit" value="Valider">
     </form>
   </div>
 
