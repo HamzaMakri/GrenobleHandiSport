@@ -8,15 +8,12 @@ form > fieldset{
   margin-bottom:  50px;
 }
 
-
 header{
-
   /*A SUPPRIMER SI PROBLEMES*/
   position: relative;
   top: 0px;
   width: 100%;
   /*========================*/
-
   display: flex;
   text-align: left;
   align-items:flex-start;
@@ -25,28 +22,19 @@ header{
   flex-direction: column;
   margin-bottom: 0px;
   height: 300px;
-
 }
-
 .navbar{
   width: 100%;
   display: flex;
   justify-content: space-around;
   width: 30px 20px 40px 20px;
 }
-
 header img{
   width: 100%;
   height: 90%;
 }
-
-
-
 .in{
-
   background-color: #1c87c9;
-
-
   padding: 15px 34px;
   text-align: center;
   text-decoration: none;
@@ -54,18 +42,13 @@ header img{
   font-size: 20px;
   margin: 4px 2px;
   cursor: pointer;
-
-
   color : white;
   border-color: #6E4F36;
   border-radius: 8px;
   background-color: #3e0d61;
-
   width: 250px;
   height: 55px;
-
 }
-
 .up{
   background-color: #1c87c9;
   color: white;
@@ -76,13 +59,10 @@ header img{
   font-size: 20px;
   margin: 4px 2px;
   cursor: pointer;
-
-
   color : black;
   border-color: #6E4F36;
   border-radius: 8px;
   background-color: #c8ad7f;
-
   width: 250px;
   height: 55px;
 
@@ -90,8 +70,8 @@ header img{
 
 .deco{
   position: absolute;
-  top : 0px;
-  right: 100px;
+  top : 80px;
+  right: 0px;
   height: 30px;
   color : rgb(227,248,243);
   border-color: gray;
@@ -126,19 +106,14 @@ button.espacePerso{
   padding: 5px;
   width: 100px;
   height: 55px;
-
   font-size: 16px;
   cursor: pointer;
-
 }
-
-
 button.espacePerso:hover{
   background-color: black;
   color: rgb(227,248,243);
   border-color: rgb(227,248,243);
 }
-
 button.login{
   position: absolute;
   top : 0px;
@@ -152,26 +127,20 @@ button.login{
   padding: 5px;
   width: 100px;
   height: 55px;
-
   font-size: 16px;
   cursor: pointer;
-
 }
-
 button.login:hover{
   background-color: black;
   color: rgb(227,248,243);
   border-color: rgb(227,248,243);
 }
-
 .sign{
   margin: 20px;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-
-
 div.centre{
   background-color: black;
   display: flex;
@@ -179,13 +148,11 @@ div.centre{
   margin: 0px 0px 20px 0px;
   height: 430px;
 }
-
 .Slider {
   width: 50%;
   height: 50%;
   width: 60%
 }
-
 /* div.Column{
   border: 2px solid #362514;
   border-radius: 2px;
@@ -193,22 +160,17 @@ div.centre{
   width: 20%;
   padding: 0px;
 } */
-
-
 .comment p{
   border: 1px solid #20bf6b;
   padding: 10px;
   margin-top: 10px;
 }
-
 .checked {
   color: orange;
 }
 .rating span {
   display: inline-block;
 }
-
-
 h6 {
   margin-top: 25px;
   margin-left: 55px;
@@ -272,7 +234,6 @@ textarea{
   display: inline-block;
   transition: all 0.3s ease 0s;
 }
-
 footer{
   position: relative;
   bottom: 0;
@@ -287,7 +248,6 @@ footer{
   box-shadow: -0px -7px 5px grey;
   margin-top: 50px;
 }
-
 footer p{
   display: flex;
   justify-content: center;
@@ -295,35 +255,25 @@ footer p{
   color: #e3f8f3;
   font-size: 75%;
 }
-
-
 footer ul{
 	display: flex;
   justify-content: center;
 	padding: 0px;
 }
-
 footer li{
 	list-style: none;
 	padding: 0 5px;
   font-size: 100%;
   padding: 10px;
 }
-
-
-
 footer a{
   color: #e3f8f3;
 	text-decoration: none;
 }
-
 footer a:hover {
   color: gray;
   text-decoration: none;
 }
-
-
-
 .fa {
   padding: 20px;
   font-size: 30px;
@@ -333,51 +283,41 @@ footer a:hover {
   text-decoration: none;
   margin: 5px 2px;
 }
-
 i.fa{
   font-size: 16px;
   width: 20px;
   height: 20px;
 }
-
 .fa:hover {
     opacity: 0.7;
 }
-
 .fa-facebook {
   background: #3B5998;
   color: white;
 }
-
 .fa-twitter {
   background: #55ACEE;
   color: white;
 }
-
 .fa-sign-in {
   padding: 0px;
   margin: 0px;
 }
-
 .fa-instagram {
   background: #125688;
   color: white;
 }
-
 .fa-user {
   padding: 0px;
   margin: 0px;
 }
-
 .fa-user-plus {
   padding: 0px;
   margin: 0px;
 }
-
 .navigation {
   width: 100%;
 }
-
 .navbar{
   width: 100%;
   margin: 0px;
@@ -385,19 +325,14 @@ i.fa{
   display: flex;
   justify-content: space-between;
 }
-
-
 .navbar a {
   text-decoration: none;
   font-size: 120%;
   font-weight: bold;
 }
-
 .navbar nav {
     font-family: monospace;
 }
-
-
 .navbar > ul {
     background: rgb(30,115,190);
     list-style: none;
@@ -407,11 +342,7 @@ i.fa{
     justify-content: center;
     width: 100%;
     box-shadow: 0px 7px 5px grey;
-
 }
-
-
-
 .navbar li {
     z-index: 5;
     color: #fff;
@@ -423,23 +354,18 @@ i.fa{
     text-decoration: none;
   transition-duration: 0.5s;
   padding: 10px 20px 10px 20px
-
 }
-
 .navbar li a {
   color: #fff;
 }
-
 .navbar li:hover,
 .navbar li:focus-within {
     background: black;
     cursor: pointer;
 }
-
 .navbar li:focus-within a {
   outline: none;
 }
-
 .navbar ul li ul {
     visibility: hidden;
   opacity: 0;
@@ -450,7 +376,6 @@ i.fa{
     left: 0;
   display: none;
 }
-
 .navbar ul li:hover > ul,
 .navbar ul li:focus-within > ul,
 .navbar ul li ul:hover,
@@ -459,17 +384,13 @@ i.fa{
    opacity: 1;
    display: block;
 }
-
 .navbar ul li ul li {
     clear: both;
   width: 100%;
 }
-
 ul.dropdown{
   padding: 0px;
 }
-
-
 .titre{
   display: flex;
   flex-direction: column;
@@ -477,17 +398,13 @@ ul.dropdown{
   width: 100%;
   margin: 64px 0px 64px 0px;
 }
-
 h1{
 text-align: center;
 margin: 0px;
 }
-
-
 h3{
   text-align: center;
 }
-
 h2{
   text-align: center;
   color: gray;
@@ -496,30 +413,22 @@ h2{
   font-size: 1.5rem;
   font-weight: bold;
 }
-
-
-
 .bienvenue{
   margin: 20px;
   font-size: 150%
 }
-
 .bienvenue > p  {
   margin: 20px 10px;
 }
-
 .bienvenue > li{
   margin-left: 100px;
 }
-
 .bienvenue > h3{
   margin: 50px;
 }
-
 form{
   display: inline-block;
 }
-
 .dropdown2 li {
   z-index: 5;
   position: relative;
