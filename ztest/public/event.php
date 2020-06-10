@@ -11,11 +11,11 @@
   } catch (\Exception $e) {
     e404();
   }
-  require '../views/header.php';
+  
 
 //  $event = $events-> find($_GET['id']);
 //  dd($event);
-
+render('header', ['title' => $event->getName()]);
  ?>
 
  <h1><?= h($event->getName()); ?> </h1>
