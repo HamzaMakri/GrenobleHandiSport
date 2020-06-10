@@ -78,6 +78,29 @@ header img{
 
 }
 
+.deco{
+  position: absolute;
+  top : 80px;
+  right: 0px;
+  height: 30px;
+  color : rgb(227,248,243);
+  border-color: gray;
+  border-radius: 8px;
+  background-color: rgb(30,115,190);
+  margin: 10px 20px 0px 0px;
+  padding: 5px;
+  width: 100px;
+  height: 55px;
+
+  font-size: 16px;
+  cursor: pointer;
+
+}
+.deco:hover{
+  background-color: black;
+  color: rgb(227,248,243);
+  border-color: rgb(227,248,243);
+}
 
 
 button.espacePerso{

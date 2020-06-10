@@ -10,12 +10,14 @@ class squelette{
   function __construct($css,$connecte,$page) {
 
     $bouton;
+    $deconnexion;
     $menuInscription = '';
     $footerInscription = '';
     $titre = '<h1>GRENOBLE HANDISPORT</h1>
               <h2>________</h2>
               <h3>Le sport pour tous</h3>';
     $infoUser = '';
+    $deconnexion='';
     $navbarAccueil = '
         <div class="navbar">
         <ul>
@@ -100,6 +102,11 @@ class squelette{
       <form action="../controler/espace.ctrl.php">
           <button class="espacePerso"><i class="fa fa-user"></i>Espace personnel</button>
       </form>
+      ';
+      $deconnexion= '
+      <p>
+        <a href="../controler/espace.ctrl.php?action=logout" class="deco">Se déconnecter</a>
+      </p>
       ';
 
       //------- SI ON EST SUR LA PAGE "ESPACE PERSONNEL" --------
@@ -202,16 +209,19 @@ class squelette{
 
       <div class="titre">
       '.$titre.'
+
       </div>'
 
       .$infoUser
-
+      .$deconnexion
       .$this->navbar.'
 
     </header>
 
   <body>
+
 '.$bouton.'
+
     ';
 
 
