@@ -80,8 +80,8 @@ header img{
 
 .deco{
   position: absolute;
-  top : 80px;
-  right: 0px;
+  top : 0px;
+  right: 100px;
   height: 30px;
   color : rgb(227,248,243);
   border-color: gray;
