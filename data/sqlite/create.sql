@@ -56,9 +56,21 @@ CREATE TABLE `inscriptionSport` (
 );
 
 
+CREATE TABLE `article` (
+  id INT NOT NULL,
+  titre VARCHAR(255) NOT NULL,
+  date DATE DEFAULT CURRENT_DATE,
+  texte TEXT,
+  image VARCHAR(255) DEFAULT NULL
+);
 
-
-
+CREATE TABLE `events`(
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  description TEXT,
+  start DATETIME NOT NULL,
+  end DATETIME NOT NULL
+);
 
 
 
