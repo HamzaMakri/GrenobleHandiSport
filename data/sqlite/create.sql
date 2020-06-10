@@ -13,20 +13,6 @@
 /*
 
 
-CREATE TABLE `user`(
-  id INT NOT NULL AUTO_INCREMENT,
-  nom VARCHAR(255) NOT NULL,
-  prenom VARCHAR(255) NOT NULL,
-  dateNaiss DATE NOT NULL,
-  mail VARCHAR(255) NOT NULL,
-  mdp VARCHAR(255) NOT NULL,
-  statut ENUM('adherent','benevole','admin') NOT NULL,
-  numInscript INT NOT NULL,
-
-  PRIMARY KEY (id),
-  FOREIGN KEY (numInscript) REFERENCES inscription(numInscript)
-);
-
 CREATE TABLE `inscription` (
   numInscript INT NOT NULL AUTO_INCREMENT,
   sexe ENUM('h','f') NOT NULL,
@@ -46,6 +32,29 @@ CREATE TABLE `inscription` (
 
   PRIMARY KEY (numInscript)
 );
+
+CREATE TABLE `user`(
+  id INT NOT NULL AUTO_INCREMENT,
+  nom VARCHAR(255) NOT NULL,
+  prenom VARCHAR(255) NOT NULL,
+  dateNaiss DATE NOT NULL,
+  mail VARCHAR(255) NOT NULL,
+  mdp VARCHAR(255) NOT NULL,
+  statut ENUM('adherent','benevole','admin') NOT NULL,
+  numInscript INT NOT NULL,
+
+  PRIMARY KEY (id),
+  FOREIGN KEY (numInscript) REFERENCES inscription(numInscript)
+);
+
+INSERT INTO `user`
+(`id`, `nom`, `prenom`, `dateNaiss`, `mail`, `mdp`, `statut`, `numInscript`)
+VALUES (NULL, 'MAKRI', 'Hamza', '2000-03-07', 'admin@mail.com', 'azerty', 'admin', '1');
+
+INSERT INTO `user`
+(`id`, `nom`, `prenom`, `dateNaiss`, `mail`, `mdp`, `statut`, `numInscript`)
+VALUES (NULL, 'ADHERENT', 'Adherent', '2020-06-13', 'adherent@mail.com', 'azerty', 'adherent', '2');
+
 
 CREATE TABLE `inscriptionSport` (
   nomsport VARCHAR(255) NOT NULL,
