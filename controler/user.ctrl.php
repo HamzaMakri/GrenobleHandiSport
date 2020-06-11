@@ -6,14 +6,6 @@ require_once('../model/User.class.php');
 session_start();
 
 $view = new View('user.view.php');
-$db = new MyDB();
-// if(!$db){
-//    echo $db->lastErrorMsg();
-// } else {
-//    echo "Base ouverte OK\n";
-// }
-
-
 
 
 // =================================================================== //

@@ -19,7 +19,7 @@
   class MyDB2 extends MySQLi
   {
 
-      private $pdo;
+      public $pdo;
 
       function set_pdo (): PDO {
           return new \PDO('mysql:host=localhost;dbname=grenoblehandisport', 'root', '', [
@@ -29,10 +29,15 @@
       }
 
       public function __construct(){
+        try {
           $this->pdo = new \PDO('mysql:host=localhost;dbname=grenoblehandisport', 'root', '', [
-              \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
-              \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC
+            \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
+            \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC
           ]);
+        } catch (\PDOException $e) {
+          echo 'Échec de la connexion : ' . $e->getMessage();
+          exit;
+        }
       }
 
       public function getAll($query, array $params)
@@ -63,17 +68,5 @@
 
   }
 
-
-
-
-
-
-// CLASS A SUPPRIMER
-   class MyDB extends SQLite3 {
-
-      function __construct() {
-         $this->open('../data/sqlite/base.db');
-      }
-   }
 
  ?>

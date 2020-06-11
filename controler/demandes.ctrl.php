@@ -12,11 +12,67 @@ $demandes = $demandesDOA->getAll();
 
 if (isset($_GET['action']) && isset($_GET['num'] )) {
   if ($_GET['action'] == 'valider') {
+
+    ////////////////// DANS UN PREMIER TEMPS ON PASSE VALIDE L'INSCRIPTION DANS LA BASE //////////////////////
     $vrai = '1';
     $sql = "UPDATE inscription SET validee=? WHERE numInscript=?";
     $result = $demandesDOA->pdo->prepare($sql);
     $result->execute([$vrai,$_GET['num']]);
-    header('location: ../controler/demandes.ctrl.php');
+
+    ///////////////// ENSUITE ON LUI CREE UN COMPTE DANS USER AVEC LEQUEL IL POURRA SE CONNECTER //////////
+
+    // d'abord on recupere la bonne Inscription afin de recuperer les informations nécessaires :
+    foreach ($demandes as $key => $value) {
+      if ($value->numInscript == $_GET['num']) {
+        $nouveauUser = $value;
+        var_dump($nouveauUser);
+      }
+    }
+
+
+
+
+
+    // $db = new MyDB2();
+    // var_dump($db->getPdo());
+    //
+    // $sth = $db->getPdo()->prepare("INSERT INTO user  VALUES (?,?,?,?,?,?,?)");
+    // $sth->execute(array(
+    //   '',
+    //   $nouveauUser->nom,
+    //   $nouveauUser->prenom,
+    //   $nouveauUser->datenaiss,
+    //   $nouveauUser->mail,
+    //   $nouveauUser->mdp,
+    //   $nouveauUser->statut,
+    //   $nouveauUser->numInscript
+    // ));
+    //
+    // $db =  NULL; // pour fermer la connexion
+    //
+    // //header('location: ../controler/demandes.ctrl.php');
+    //
+
+
+    $db = new MyDB2();
+    $sql = "INSERT INTO user (nom,prenom,dateNaiss,mail,mdp,statut,numInscript) VALUES (:nom,:prenom,:dateNaiss,:mail,:mdp,:statut,:numInscript)";
+    $result = $db->getPdo()->prepare($sql);
+    var_dump($result);
+    $result->execute(array(
+
+      ':nom' => $nouveauUser->nom,
+      ':prenom' => $nouveauUser->prenom,
+      ':dateNaiss' => $nouveauUser->datenaiss,
+      ':mail' => $nouveauUser->mail,
+      ':mdp' => $nouveauUser->mdp,
+      ':statut' => $nouveauUser->statut,
+      ':numInscript' => $nouveauUser->numInscript
+        ));
+
+    $db =  NULL; // pour fermer la connexion
+
+    //header('location: ../controler/demandes.ctrl.php');
+
 
   } elseif ($_GET['action'] == 'refuser') {
     $num = $_GET['num'];
