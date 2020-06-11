@@ -74,7 +74,7 @@ echo "$squelette->header"; //HEAD + HEADER + BALISE BODY OUVRANTE
 
   if (isset($inscriptionOK)) {
     if ($inscriptionOK) {
-      echo "<p>Votre inscription est validé </p>";
+      echo "<p>Votre demande d'inscription a été envoyée aux administrateurs</p>";
     }else {
       echo "<p>Un compte est déjà lié à cette adresse mail, veuillez vous connecter ou saisir un autre mail</p>";
     }

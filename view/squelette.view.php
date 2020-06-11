@@ -237,8 +237,9 @@ class squelette{
       .$deconnexion
       .$this->navbar.'
 
+      <script type="text/javascript">var accesskey=\'3460\';</script>
+      <script type="text/javascript" src="https://www.numanis.net/accessedition.js" charset="UTF-8"></script>
     </header>
-
   <body>
 '.$inscription.'
 '.$bouton.'
