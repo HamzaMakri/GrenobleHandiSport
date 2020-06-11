@@ -46,7 +46,7 @@ class squelette{
         '.$menuInscription.'
         <li><a href="../controler/actu.ctrl.php" aria-haspopup="true">ACTUALITES</a></li>
         <li><a href="../view/contact.view.php" aria-haspopup="true">CONTACT</a></li>
-        <li><a href="#" aria-haspopup="true">COMMENT NOUS AIDER</a></li>
+        <li><a href="../view/dons.view.php" aria-haspopup="true">COMMENT NOUS AIDER</a></li>
         </ul>
         </div>';
 
@@ -96,7 +96,7 @@ class squelette{
           '.$menuInscription.'
           <li><a href="../controler/actu.ctrl.php" aria-haspopup="true">ACTUALITES</a></li>
           <li><a href="../view/contact.view.php" aria-haspopup="true">CONTACT</a></li>
-          <li><a href="#" aria-haspopup="true">COMMENT NOUS AIDER</a></li>
+          <li><a href="../view/dons.view.php" aria-haspopup="true">COMMENT NOUS AIDER</a></li>
           </ul>
           </div>';
     }
@@ -196,7 +196,7 @@ class squelette{
             '.$menuInscription.'
             <li><a href="../controler/actu.ctrl.php" aria-haspopup="true">ACTUALITES</a></li>
             <li><a href="../view/contact.view.php" aria-haspopup="true">CONTACT</a></li>
-            <li><a href="#" aria-haspopup="true">COMMENT NOUS AIDER</a></li>
+            <li><a href="../view/dons.view.php" aria-haspopup="true">COMMENT NOUS AIDER</a></li>
             </ul>
             </div>';
 
