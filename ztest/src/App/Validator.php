@@ -11,6 +11,10 @@ class Validator {
         $this->data = $data;
     }
 
+    /**
+     * @param array $data
+     * @return array|bool
+     */
     public function validates(array $data) {
         $this->errors = [];
         $this->data = $data;
