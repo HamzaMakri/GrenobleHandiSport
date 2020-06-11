@@ -16,7 +16,7 @@ echo "$squelette->header"; //HEAD + HEADER + BALISE BODY OUVRANTE
  ?>
 <main>
   <p>Contactez-nous par e-mail</p>
-  <form class="contact-form" action="../controler/mail.ctrl.php" method="post">
+  <form class="contact-form"  action="../controler/mail.ctrl.php" method="post">
     <input type="text" name="name" placeholder="Votre nom complet">
     <input type="text" name="email" placeholder="Votre E-mail">
     <input type="text" name="objet" placeholder="Objet de votre message">
