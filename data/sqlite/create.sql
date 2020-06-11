@@ -70,7 +70,11 @@ CREATE TABLE `inscriptionSport` (
 
 
 CREATE TABLE `article` (
+<<<<<<< HEAD
   id INT NOT NULL AUTO_INCREMENT,
+=======
+  id INT PRIMARY KEY AUTO_INCREMENT,
+>>>>>>> df738178725d97640c95616b2be21839bfb8a62e
   titre VARCHAR(255) NOT NULL,
   date DATE DEFAULT CURRENT_DATE,
   texte TEXT,

@@ -14,7 +14,6 @@ var_dump($demandes);
 
 
 
-
 $view = new View('actu.view.php');
 
 $view->assign('demandes',$demandes);

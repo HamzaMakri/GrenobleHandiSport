@@ -78,10 +78,14 @@ if (isset($_GET['action']) ) {
 // =================================================================== //
 // =========================== INSCRIPTION =========================== //
 // =================================================================== //
+var_dump($_REQUEST);
+var_dump($_FILES);
 
 
 
     if (isset($_REQUEST['name'])) {
+
+
 
       $name=$_REQUEST['name'];
       $prenom= $_REQUEST['prenom'];
@@ -90,8 +94,15 @@ if (isset($_GET['action']) ) {
       $adresse= $_REQUEST['adresse'];
       $statut=$_REQUEST['statut'];
       $tel= $_REQUEST['tel'];
-      if (isset($_REQUEST['certif'])) {
-        $attestationmedicale = $_REQUEST['certif'];
+      if (isset($_FILES['certif'])) {
+
+        // POUR ENREGISTRER LE DOCUMENT DANS LE SERVEUR :
+        $destination = "../data/attestations/";
+        $attestationmedicale = basename($_FILES['certif']['name']);
+        var_dump($attestationmedicale);
+        move_uploaded_file($_FILES['certif']['tmp_name'], $destination . $attestationmedicale);
+        //////////////////////////////////////////////////
+
       }
       $sport= $_REQUEST['sports']; //tableau de plusieurs sports
       $email= $_REQUEST['email'];
@@ -150,6 +161,7 @@ if (isset($_GET['action']) ) {
 
         } elseif (isset($attestationmedicale)) {
 
+
           $sql = "INSERT INTO inscription (sexe,nom,prenom,mail,mdp,dateNaiss,nationalite,profession,tel,adresse,statut,attestationmedicale) VALUES (:sexe,:nom,:prenom,:mail,:mdp,:dateNaiss,:nationalite,:profession,:tel,:adresse,:statut,:attestationmedicale )";
           $result = $db->getPdo()->prepare($sql);
           $result->execute(array(
@@ -203,7 +215,7 @@ if (isset($_GET['action']) ) {
         }
 
         $inscriptionOK = true;
-        header('location: ../controler/user.ctrl.php?insc=ok');
+        //header('location: ../controler/user.ctrl.php?insc=ok');
       }
       $db = NULL; // pour fermer la connexion
     }
