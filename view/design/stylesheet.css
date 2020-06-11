@@ -1,4 +1,33 @@
 
+
+.article{
+  margin: 0px 0px 40px 0px;
+  display: flex;
+  flex-direction: row;
+  padding: 0.2px;
+  border: solid gray 1.3px;
+}
+
+.article>img{
+  width: 250px;
+  height: 250px;
+  margin-right: 20px;
+}
+.header-art>p{
+  font-size: 0.75em;
+}
+
+.header-art{
+  margin-bottom: 25px;
+  margin-top: 15px;
+}
+
+.articles{
+  margin: 40px 15px 20px 15px;
+}
+
+
+
 .valider-refuser {
   text-align: center;
   display: flex;

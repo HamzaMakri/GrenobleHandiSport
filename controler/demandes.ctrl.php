@@ -29,31 +29,6 @@ if (isset($_GET['action']) && isset($_GET['num'] )) {
       }
     }
 
-
-
-
-
-    // $db = new MyDB2();
-    // var_dump($db->getPdo());
-    //
-    // $sth = $db->getPdo()->prepare("INSERT INTO user  VALUES (?,?,?,?,?,?,?)");
-    // $sth->execute(array(
-    //   '',
-    //   $nouveauUser->nom,
-    //   $nouveauUser->prenom,
-    //   $nouveauUser->datenaiss,
-    //   $nouveauUser->mail,
-    //   $nouveauUser->mdp,
-    //   $nouveauUser->statut,
-    //   $nouveauUser->numInscript
-    // ));
-    //
-    // $db =  NULL; // pour fermer la connexion
-    //
-    // //header('location: ../controler/demandes.ctrl.php');
-    //
-
-
     $db = new MyDB2();
     $sql = "INSERT INTO user (nom,prenom,mail,mdp,statut,numInscript) VALUES (:nom,:prenom,:mail,:mdp,:statut,:numInscript)";
     $result = $db->getPdo()->prepare($sql);
@@ -70,7 +45,7 @@ if (isset($_GET['action']) && isset($_GET['num'] )) {
 
     $db =  NULL; // pour fermer la connexion
 
-    //header('location: ../controler/demandes.ctrl.php');
+    header('location: ../controler/demandes.ctrl.php');
 
 
   } elseif ($_GET['action'] == 'refuser') {
