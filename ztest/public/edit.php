@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($errors)) {
         $events->hydrate($event, $data);
         $events->update($event);
-        header('Location: /index?success=1');
+        header('Location: index?success=1');
         exit();
     }
 }
