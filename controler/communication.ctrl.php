@@ -20,6 +20,7 @@ if (isset($_FILES)) {
       $destination = "../view/design/imgArticle/";
       $nom = basename($_FILES['imageArticle']['name']);
 
+
       if (move_uploaded_file($_FILES['imageArticle']['tmp_name'], $destination . $nom)){ //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
         try {
           $pdo = new \PDO('mysql:host=localhost;dbname=grenoblehandisport', 'root', '', [\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION, \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC ]);
@@ -43,7 +44,7 @@ if (isset($_FILES)) {
         $_SESSION['postdata'] = $_POST;
         unset($_POST);
         unset($_POST);
-        //header("Location: ".$_SERVER['PHP_SELF']);
+        header("Location:../controler/main.ctrl.php");
         exit;
       }
     }

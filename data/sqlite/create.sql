@@ -70,7 +70,7 @@ CREATE TABLE `inscriptionSport` (
 
 
 CREATE TABLE `article` (
-  id INT NOT NULL,
+  id INT NOT NULL AUTO_INCREMENT,
   titre VARCHAR(255) NOT NULL,
   date DATE DEFAULT CURRENT_DATE,
   texte TEXT,
