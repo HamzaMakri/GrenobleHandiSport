@@ -137,7 +137,7 @@ class squelette{
             <li><a href="../controler/main.ctrl.php">ACCUEIL</a></li>
             <li><a href="../ztest/public/index.php">AGENDA</a></li>
             <li><a href="../controler/communication.ctrl.php">COMMUNICATION</a></li>
-            <li><a href="#" aria-haspopup="true">DEMANDES D\'INSCRIPTION</a></li>
+            <li><a href="../controler/demandes.ctrl.php" aria-haspopup="true">DEMANDES D\'INSCRIPTION</a></li>
             </ul>
             </div>';
           break;
