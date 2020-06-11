@@ -153,50 +153,52 @@ class squelette{
             </ul>
             </div>';
           break;
+          case 'benevole':
+            $titre = '<h1>ESPACE PERSONNEL</h1>';
+            $this->navbar = '
+            <div class="navbar">
+            <ul>
+            <li><a href="../controler/main.ctrl.php">ACCUEIL</a></li>
+            <li><a href="../ztest/public/index.php">AGENDA</a></li>
+            <li><a href="../controler/actu.ctrl.php">ACTUALITES</a></li>
+            <li><a href="#" aria-haspopup="true">CONTACT</a></li>
+            </ul>
+            </div>';
         }
 
       }
       else {
-        // $this->navbar = '
-        //     <div class="navbar">
-        //     <ul>
-        //     <li><a href="../controler/main.ctrl.php">ACCUEIL</a></li>
-        //     <li><a href="#" aria-haspopup="true">LA VIE AU CLUB</a>
-        //     <ul class="dropdown" aria-label="submenu">
-        //     <li><a href="#">HISTORIQUE</a></li>
-        //     </ul>
-        //     </li>
-        //     <li><a href="#" aria-haspopup="true">SPORTS</a>
-        //     <ul class="dropdown" aria-label="submenu">
-        //     <li><a href="../view/hockey.view.php">HOCKEY</a></li>
-        //     <li><a href="escrime.view.php">ESCRIME</a></li>
-        //     <li><a href="../view/paratennis.view.php">PARATENNIS</a></li>
-        //     <li><a href="../view/torball.view.php">TORBALL</a></li>
-        //     <li><a href="#">NATATION</a>
-        //     <ul class="dropdown2" aria-label="submenu">
-        //     <li><a href="../view/ecole_natation.view.php">ECOLE DE NATATION</a></li>
-        //     <li><a href="../view/natation_adulte.view.php">NATATION ADULTE (HANDI NATATION)</a></li>
-        //     </ul>
-        //     </li>
-        //     <li><a href="../view/ski.view.php">SKI ALPIN</a></li>
-        //     </ul>
-        //     </li>
-        //     '.$menuInscription.'
-        //     <li><a href="../controler/actu.ctrl.php" aria-haspopup="true">ACTUALITES</a></li>
-        //     <li><a href="../view/contact.view.php" aria-haspopup="true">CONTACT</a></li>
-        //     <li><a href="#" aria-haspopup="true">COMMENT NOUS AIDER</a></li>
-        //     </ul>
-        //     </div>';
-        $titre = '<h1>ESPACE PERSONNEL</h1>';
         $this->navbar = '
-        <div class="navbar">
-        <ul>
-        <li><a href="../controler/main.ctrl.php">ACCUEIL</a></li>
-        <li><a href="../ztest/public/index.php">AGENDA</a></li>
-        <li><a href="../controler/actu.ctrl.php">ACTUALITES</a></li>
-        <li><a href="#" aria-haspopup="true">CONTACT</a></li>
-        </ul>
-        </div>';
+            <div class="navbar">
+            <ul>
+            <li><a href="../controler/main.ctrl.php">ACCUEIL</a></li>
+            <li><a href="#" aria-haspopup="true">LA VIE AU CLUB</a>
+            <ul class="dropdown" aria-label="submenu">
+            <li><a href="#">HISTORIQUE</a></li>
+            </ul>
+            </li>
+            <li><a href="#" aria-haspopup="true">SPORTS</a>
+            <ul class="dropdown" aria-label="submenu">
+            <li><a href="../view/hockey.view.php">HOCKEY</a></li>
+            <li><a href="escrime.view.php">ESCRIME</a></li>
+            <li><a href="../view/paratennis.view.php">PARATENNIS</a></li>
+            <li><a href="../view/torball.view.php">TORBALL</a></li>
+            <li><a href="#">NATATION</a>
+            <ul class="dropdown2" aria-label="submenu">
+            <li><a href="../view/ecole_natation.view.php">ECOLE DE NATATION</a></li>
+            <li><a href="../view/natation_adulte.view.php">NATATION ADULTE (HANDI NATATION)</a></li>
+            </ul>
+            </li>
+            <li><a href="../view/ski.view.php">SKI ALPIN</a></li>
+            </ul>
+            </li>
+            '.$menuInscription.'
+            <li><a href="../controler/actu.ctrl.php" aria-haspopup="true">ACTUALITES</a></li>
+            <li><a href="../view/contact.view.php" aria-haspopup="true">CONTACT</a></li>
+            <li><a href="#" aria-haspopup="true">COMMENT NOUS AIDER</a></li>
+            </ul>
+            </div>';
+
       }
 
     }
