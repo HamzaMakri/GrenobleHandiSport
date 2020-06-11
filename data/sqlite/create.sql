@@ -38,7 +38,6 @@ CREATE TABLE `user`(
   id INT NOT NULL AUTO_INCREMENT,
   nom VARCHAR(255) NOT NULL,
   prenom VARCHAR(255) NOT NULL,
-  dateNaiss DATE NOT NULL,
   mail VARCHAR(255) NOT NULL,
   mdp VARCHAR(255) NOT NULL,
   statut ENUM('adherent','benevole','admin') NOT NULL,

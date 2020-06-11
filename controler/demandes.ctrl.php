@@ -55,14 +55,13 @@ if (isset($_GET['action']) && isset($_GET['num'] )) {
 
 
     $db = new MyDB2();
-    $sql = "INSERT INTO user (nom,prenom,dateNaiss,mail,mdp,statut,numInscript) VALUES (:nom,:prenom,:dateNaiss,:mail,:mdp,:statut,:numInscript)";
+    $sql = "INSERT INTO user (nom,prenom,mail,mdp,statut,numInscript) VALUES (:nom,:prenom,:mail,:mdp,:statut,:numInscript)";
     $result = $db->getPdo()->prepare($sql);
     var_dump($result);
     $result->execute(array(
 
       ':nom' => $nouveauUser->nom,
       ':prenom' => $nouveauUser->prenom,
-      ':dateNaiss' => $nouveauUser->datenaiss,
       ':mail' => $nouveauUser->mail,
       ':mdp' => $nouveauUser->mdp,
       ':statut' => $nouveauUser->statut,
