@@ -56,6 +56,9 @@ INSERT INTO `user`
 (`id`, `nom`, `prenom`, `dateNaiss`, `mail`, `mdp`, `statut`, `numInscript`)
 VALUES (NULL, 'ADHERENT', 'Adherent', '2020-06-13', 'adherent@mail.com', 'azerty', 'adherent', '2');
 
+INSERT INTO `user`
+(`id`, `nom`, `prenom`, `dateNaiss`, `mail`, `mdp`, `statut`, `numInscript`)
+VALUES (NULL, 'BENEVOLE', 'Benevole', '2020-06-13', 'benevole@mail.com', 'azerty', 'benevole', '3');
 
 CREATE TABLE `inscriptionSport` (
   nomsport VARCHAR(255) NOT NULL,
