@@ -10,7 +10,18 @@ session_start();
 $demandesDOA = new InscriptionDOA();
 $demandes = $demandesDOA->getAll();
 
-var_dump($demandes);
+if (isset($_GET['action']) && isset($_GET['num'] )) {
+  if ($_GET['action'] == 'valider') {
+    $sql = "UPDATE inscription SET validee=? WHERE numInscript=?";
+    $result = $demandesDOA->pdo->prepare($sql);
+    $result = execute([1,$_GET['num']]);
+    
+  } elseif ($_GET['action'] == 'refuser') {
+    $sql = "UPDATE inscription SET validee=? WHERE numInscript=?";
+    $result = $demandesDOA->pdo->prepare($sql);
+    $result = execute([1,$_GET['num']]);
+  }
+}
 
 
 

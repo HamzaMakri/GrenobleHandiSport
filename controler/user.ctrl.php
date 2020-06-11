@@ -78,8 +78,7 @@ if (isset($_GET['action']) ) {
 // =================================================================== //
 // =========================== INSCRIPTION =========================== //
 // =================================================================== //
-var_dump($_REQUEST);
-var_dump($_FILES);
+
 
 
 
@@ -99,7 +98,6 @@ var_dump($_FILES);
         // POUR ENREGISTRER LE DOCUMENT DANS LE SERVEUR :
         $destination = "../data/attestations/";
         $attestationmedicale = basename($_FILES['certif']['name']);
-        var_dump($attestationmedicale);
         move_uploaded_file($_FILES['certif']['tmp_name'], $destination . $attestationmedicale);
         //////////////////////////////////////////////////
 

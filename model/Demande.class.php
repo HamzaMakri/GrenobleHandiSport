@@ -55,10 +55,15 @@ class Inscription {
   public function getcorps(): string{
       $corps = '
       <div class="demande">
+
+      <div class="num">
+      <p>'.$this->numInscript.'<p>
+      </div>
+
         <div class="demande-infoPerso">
           <p>Nom : '.$this->nom.'</p>
           <p>Prenom : '.$this->prenom.'</p>
-          <p>Sexe : '.$this->sexe.'</p>
+          <p>Sexe : '.strtoupper($this->sexe).'</p>
           <p>Date de naissance : '.$this->datenaiss.'</p>
           <p>Nationalité : '.$this->nationalite.'</p>
           <p>Profession : '.$this->profession.'</p>
@@ -66,7 +71,7 @@ class Inscription {
           <p>Adresse : '.$this->adresse.'</p>
           <p>Statut : '.$this->statut.'</p>
           <p>Téléphone : '.$this->tel.'</p>
-          <p>Certificat médical : '.$this->attestationmedicale.'</p><br>
+          <p>Certificat médical : <a href="../data/attestations/'.$this->attestationmedicale.'"> '.$this->attestationmedicale.'</a> </p>
         </div>
 
         <div class="demande-id-mdp">
@@ -74,6 +79,10 @@ class Inscription {
           <p>Mot de passe : '.$this->mdp.'</p>
         </div>
 
+        <div class="valider-refuser">
+        <a href="demandes.ctrl.php?action=valider&num='.$this->numInscript.'" >Valider</a>
+        <a href="demandes.ctrl.php?action=refuser&num='.$this->numInscript.'" >Refuser</a>
+        </div>
       </div>
       ';
       return $corps;

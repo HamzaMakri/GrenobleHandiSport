@@ -23,6 +23,7 @@ echo "$squelette->header"; //HEAD + HEADER + BALISE BODY OUVRANTE
 
     <h1> Liste des demandes d'inscription</h1>
 
+
     <?php if ((isset($_GET['valide']))): ?>
       <?php if ($_GET['valide'] == 'oui'): ?>
         <h3>L'article a été ajouté !</h3>
@@ -30,26 +31,23 @@ echo "$squelette->header"; //HEAD + HEADER + BALISE BODY OUVRANTE
     <?php endif; ?>
 
 
+    <div class="liste-demandes">
+
     <?php
      foreach ($demandes as $key => $value):
        if ($value->validee == 0) :
-       ?>
 
-      <div class="liste-demandes">
-        <?php
         $case = $value->getcorps();
         echo "$case";
-        ?>
 
-      </div>
-
-    <?php endif;
+      endif;
       endforeach; ?>
 
+    </div>
 
   <?php else: ?>
 
-    <h1>VOUS N'AVEZ PAS LE DROIT D'ACCES A CETTE PAGE !</h1>
+    <h1>VOUS N'AVEZ PAS LES DROITS D'ACCES A CETTE PAGE !</h1>
 
   <?php endif; ?>
 
