@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once('squelette.view.php');
 
 if (isset($_SESSION['user'])) {

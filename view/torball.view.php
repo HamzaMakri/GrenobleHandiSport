@@ -3,6 +3,7 @@
 
 require_once('squelette.view.php');
 
+session_start();
 
 if (isset($_SESSION['user'])) {
   $connecte = true;
