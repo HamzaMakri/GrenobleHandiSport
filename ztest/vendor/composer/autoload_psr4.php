@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Calendar\\' => array($baseDir . '/src/Calendar'),
+    'App\\' => array($baseDir . '/src/App'),
 );
