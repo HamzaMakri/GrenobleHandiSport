@@ -31,7 +31,7 @@ render('header', ['title' => 'Ajouter un évènement']);
 
     <?php if (!empty($errors)): ?>
       <div class="alert alert-danger">
-        Corrigez vos erreurs
+        Merci de corriger vos erreurs
       </div>
     <?php endif; ?>
 
@@ -39,7 +39,7 @@ render('header', ['title' => 'Ajouter un évènement']);
   <form action="" method="post" class="form">
       <?php render('calendar/form', ['data' => $data, 'errors' => $errors]); ?>
     <div class="form-group">
-      <button class="btn btn-primary">Ajouter un évènement</button>
+      <button class="btn btn-primary">Ajouter l'évènement</button>
     </div>
   </form>
 </div>

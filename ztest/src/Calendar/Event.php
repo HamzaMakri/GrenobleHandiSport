@@ -1,52 +1,52 @@
 <?php
-
 namespace Calendar;
-/**
- *
- */
-class Event{
-  private $id;
-  private $name;
-  private $description;
-  private $start;
-  private $end;
 
-  public function getId(): int{
-    return $this->id;
-  }
+class Event {
 
-  public function getName(): string{
-    return $this->name;
-  }
+    private $id;
 
-  public function getDescription(): string{
-    return $this->description ?? ' ';
-  }
+    private $name;
 
-  public function getStart(): \DateTime{
-    return new \DateTime($this->start);
-  }
+    private $description;
 
-  public function getEnd(): \DateTime{
-    return new \DateTime($this->end);
-  }
+    private $start;
 
-  public function setName (string $name) {
-      $this->name = $name;
-  }
+    private $end;
 
-  public function setDescription (string $description) {
-      $this->description = $description;
-  }
+    public function getId(): int {
+        return $this->id;
+    }
 
-  public function setStart (string $start) {
-      $this->start = $start;
-  }
+    public function getName (): string {
+        return $this->name;
+    }
 
-  public function setEnd (string $end) {
-      $this->end = $end;
-  }
+    public function getDescription (): string {
+        return $this->description ?? '';
+    }
+
+    public function getStart (): \DateTime {
+        return new \DateTime($this->start);
+    }
+
+    public function getEnd (): \DateTime {
+        return new \DateTime($this->end);
+    }
+
+    public function setName (string $name) {
+        $this->name = $name;
+    }
+
+    public function setDescription (string $description) {
+        $this->description = $description;
+    }
+
+    public function setStart (string $start) {
+        $this->start = $start;
+    }
+
+    public function setEnd (string $end) {
+        $this->end = $end;
+    }
 
 }
-
- ?>

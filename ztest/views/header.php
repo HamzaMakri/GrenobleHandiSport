@@ -1,14 +1,13 @@
-<!DOCTYPE html>
+<!Doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/calendar.css">
+  <title><?= isset($title) ? h($title) : 'Mon calendrier'; ?></title>
+</head>
+<body>
 
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/GrenobleHandiSport/ztest/public/css/calendar.css">
-    <title><?=isset($title) ? h($title):'Mon Calendrier' ?></title>
-  </head>
-  <body>
-
-    <nav class="navbar navbar-dark bg-primary mb-3">
-      <a href="/GrenobleHandiSport/ztest/public/index.php" class="navbar-brand">Mon Calendrier</a>
-    </nav>
+<nav class="navbar navbar-dark bg-primary mb-3">
+    <a href="/index.php" class="navbar-brand">Mon calendrier</a>
+</nav>
