@@ -137,7 +137,7 @@ echo "$squelette->header"; //HEAD + HEADER + BALISE BODY OUVRANTE
           <input type="tel" id="tel" name="tel" pattern="[0-9]{10}" required> <br>
 
           <label for="certif">Certificat médical  :</label>
-          <input id="certif" type="file" name="certif" accept="image/*|.pdf" required="required"/>
+          <input id="certif" type="file" name="certif" accept="image/*|.pdf"/>
 
         </fieldset>
 
