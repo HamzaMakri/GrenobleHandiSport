@@ -1,4 +1,5 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
 
 require_once('../framework/view.class.php');
 require_once('../model/User.class.php');
@@ -208,6 +209,41 @@ if (isset($_GET['action']) ) {
         //header('location: ../controler/user.ctrl.php?insc=ok');
       }
       $db = NULL; // pour fermer la connexion
+
+
+      $name= $_POST['name'];
+      $objet= "Nouvelle demande d'inscription";
+      $email= $_POST['email'];
+
+
+      require_once "../PHPMailer/PHPMailer.php";
+      require_once "../PHPMailer/SMTP.php";
+      require_once "../PHPMailer/Exception.php";
+
+      $mail = new PHPMailer();
+      $mail->isSMTP();
+      $mail->Host = "smtp.gmail.com";
+      $mail->SMTPAuth = true;
+      $mail->Username = "grenoblehandisportenvoi@gmail.com";
+      $mail->Password = 'testEnvoi';
+      $mail->Port = 465; //587
+      $mail->SMTPSecure = "ssl"; //tls
+
+
+      $mail->isHTML(true);
+      $mail->setFrom($email, $name);
+      $mail->addAddress("grenoblehandireception@gmail.com");
+      $mail->Subject = $objet;
+      $mail->Body = "Vous avez une nouvelle demande d'inscription: ".$name."\n Adresse mail: ".$email."\n Veuillez vous connecter sur votre compte admin pour valider ou supprimer cette demande \n\n";
+
+      if ($mail->send()) {
+          $status = "success";
+          $response = "Email is sent!";
+          header("Location: ../index.php?mailsent");
+      } else {
+          $status = "failed";
+          $response = "Erreur: <br><br>" . $mail->ErrorInfo;
+      }
     }
 
 

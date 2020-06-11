@@ -21,7 +21,7 @@ echo "$squelette->header"; //HEAD + HEADER + BALISE BODY OUVRANTE
     <input type="text" name="email" placeholder="Votre E-mail">
     <input type="text" name="objet" placeholder="Objet de votre message">
     <textarea name="message" placeholder="Votre message"></textarea>
-    <button class="submit" type="submit" name="submit">Envoyer l'E-mail</button>
+    <button class="submit" type="submit" name="submit" value="contact">Envoyer l'E-mail</button>
   </form>
 </main>
 

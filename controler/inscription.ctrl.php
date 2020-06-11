@@ -8,8 +8,8 @@ session_start();    // pour detruire la session : session_destroy();
 
 
 
-$view = new View('contact.view.php');
+$view = new View('user.view.php');
 
-$view->display("contact.view.php");
+$view->display("user.view.php");
 
  ?>

@@ -1,5 +1,6 @@
 <?php
 
+
   class User {
 
     public $nom;
@@ -63,7 +64,6 @@
       {
           return call_user_func(array($this->pdo, $name), $arguments);
       }
-
 
 
   }
