@@ -18,6 +18,8 @@ echo "$squelette->header"; //HEAD + HEADER + BALISE BODY OUVRANTE
 <!-- ================================================ -->
 <!-- ================================================ -->
 
+<h1> L'actualité à Grenolble Handisport </h1>
+
 <?php foreach ($articles as $key => $value): ?>
 
   <div class="ligne">
