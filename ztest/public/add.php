@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $events = new \Calendar\Events(get_pdo());
         $event = $events->hydrate(new \Calendar\Event(), $data);
         $events->create($event);
-        header('Location: /index?success=1');
+        header('Location: index?success=1');
         exit();
     }
 }
