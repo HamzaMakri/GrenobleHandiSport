@@ -254,15 +254,15 @@ class squelette{
       </body>
       <footer>
         <div class="footer">
-          <a href="https://www.facebook.com/search/top/?q=grenoble%20handisport" class="fa fa-facebook"></a>
-          <a href="#" class="fa fa-instagram"></a>
+          <a href="https://www.facebook.com/Grenoble-Handisport-463785720310888/" class="fa fa-facebook"></a>
+          <a href="https://www.instagram.com/grenoble_handisport/?hl=fr" class="fa fa-instagram"></a>
           <ul>
-            <li><a href="#">Accueil</a></li>
+            <li><a href="../controler/main.ctrl.php">Accueil</a></li>
             <li><a href="#">La vie du club</a></li>
             <li><a href="#">Sports</a></li>
             '.$footerInscription.'
             <li><a href="../controler/user.ctrl.php">Actualités</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="../view/contact.view.php">Contact</a></li>
             <li><a href="#">Comment nous aider</a></li>
           </ul>
         <p>Copyright © 2020 Grenoble Handisport. All rights reserved.</p>

@@ -1,21 +1,41 @@
 <?php
-if (isset($_POST['submit'])){
-  $name= $_POST['name'];
-  $objet= $_POST['objet'];
-  $mail= $_POST['mail'];
-  $message= $_POST['message'];
+  use PHPMailer\PHPMailer\PHPMailer;
 
-  $mailTO = "grenoblehandisportenvoi@gmail.com";
-  $headers = "From: ".$mail;
-  $txt= "Vous avez reçu un e-mail de : ".$name.".\n\n".$message;
+  if (isset($_POST['submit'])){
+    $name= $_POST['name'];
+    $objet= $_POST['objet'];
+    $email= $_POST['email'];
+    $message= $_POST['message'];
 
-  if(mail($mailTO, $objet, $txt, $headers)){
-    header("Location: ../index.php?mailsent");
+    require_once "../PHPMailer/PHPMailer.php";
+    require_once "../PHPMailer/SMTP.php";
+    require_once "../PHPMailer/Exception.php";
+
+    $mail = new PHPMailer();
+    $mail->isSMTP();
+    $mail->Host = "smtp.gmail.com";
+    $mail->SMTPAuth = true;
+    $mail->Username = "grenoblehandisportenvoi@gmail.com";
+    $mail->Password = 'testEnvoi';
+    $mail->Port = 465; //587
+    $mail->SMTPSecure = "ssl"; //tls
+
+
+    $mail->isHTML(true);
+    $mail->setFrom($email, $name);
+    $mail->addAddress("grenoblehandireception@gmail.com");
+    $mail->Subject = $objet;
+    $mail->Body = "Vous avez reçu un message de: ".$name."\n Adresse mail: ".$email."\n vous a envoyé ce message: \n\n".$message;
+
+    if ($mail->send()) {
+        $status = "success";
+        $response = "Email is sent!";
+        header("Location: ../index.php?mailsent");
+    } else {
+        $status = "failed";
+        $response = "Something is wrong: <br><br>" . $mail->ErrorInfo;
+    }
   }
-  else{
-    echo"échec de l'envoi de l'e_mail";
-  }
-}
 
 
 ?>
