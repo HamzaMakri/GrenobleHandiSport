@@ -31,7 +31,9 @@ echo "$squelette->header"; //HEAD + HEADER + BALISE BODY OUVRANTE
 
 
     <?php
-     foreach ($demandes as $key => $value): ?>
+     foreach ($demandes as $key => $value):
+       if ($value->validee == 0) :
+       ?>
 
       <div class="liste-demandes">
         <?php
@@ -41,7 +43,8 @@ echo "$squelette->header"; //HEAD + HEADER + BALISE BODY OUVRANTE
 
       </div>
 
-    <?php endforeach; ?>
+    <?php endif;
+      endforeach; ?>
 
 
   <?php else: ?>

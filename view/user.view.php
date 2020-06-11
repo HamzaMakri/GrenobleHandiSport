@@ -109,7 +109,7 @@ echo "$squelette->header"; //HEAD + HEADER + BALISE BODY OUVRANTE
           <label for="sexe">Sexe :</label>
           <input type="radio" id="homme" name="sexe" value="h" checked>
           <label for="homme">Homme</label>
-          <input type="radio" id="femme" name="gender" value="f">
+          <input type="radio" id="femme" name="sexe" value="f">
           <label for="femme">Femme</label><br>
 
           <label for="datenaiss">Date de naissance :</label>
