@@ -7,7 +7,7 @@
   <title><?= isset($title) ? h($title) : 'Mon calendrier'; ?></title>
 </head>
 <body>
-
+<!-- 
 <nav class="navbar navbar-dark bg-primary mb-3">
     <a href="/index.php" class="navbar-brand">Mon calendrier</a>
-</nav>
+</nav> -->

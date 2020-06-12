@@ -41,7 +41,7 @@ echo "$squelette->header"; //HEAD + HEADER + BALISE BODY OUVRANTE
       <p> <b> =============== test de la connexion :  adherent@mail.com // mdp : azerty (adherent) =============== </b> <p>
       <br>
 
-      <form  action="" method="POST" enctype="multipart/form-data">
+      <form  action="../controler/user.ctrl.php?action=signin" method="POST" enctype="multipart/form-data">
       <input type="hidden" name="action" value="submit" required="required">
 
       Votre email:<br>
