@@ -20,7 +20,7 @@ echo "$squelette->header"; //HEAD + HEADER + BALISE BODY OUVRANTE
 <?php if ($connecte && $_SESSION['user']->statut == 'admin'): ?>
 
 
-  <h1> Page d'ajout d'article dans actualité</h1>
+  <h1> Ajout d'article dans actualité :</h1>
 
   <?php if ((isset($_GET['valide']))): ?>
     <?php if ($_GET['valide'] == 'oui'): ?>
@@ -42,6 +42,22 @@ echo "$squelette->header"; //HEAD + HEADER + BALISE BODY OUVRANTE
       <input type="submit" value="Valider">
     </form>
   </div>
+
+  <h1>Gestion des articles :</h1>
+
+  <div class="articles">
+    <?php foreach ($articles as $key => $value): ?>
+
+      <div class="ligne">
+        <?php
+        $case = $value->getcorps(true);
+        echo "$case";
+        ?>
+      </div>
+
+    <?php endforeach; ?>
+  </div>
+
 
 <?php else: ?>
 

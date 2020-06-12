@@ -34,28 +34,47 @@ class Article {
   public $texte;
   public $image;
 
-  public function getcorps(): string{
+  public function getcorps($admin): string{
     $annee = substr($this->date,0,4);
     $mois= substr($this->date,5,2);
     $jour= substr($this->date,8,2);
 
     $this->date = $jour.'/'.$mois.'/'.$annee;
 
-    // $this->date = .'/'.strrev(substr($this->date,3,4)).'/'.strrev(substr($this->date,3,4));
+if ($admin) {
 
-      $corps = '
-      <div class="article">
-        <img src="../view/design/imgArticle/'.$this->image.'" >
-        <div>
-            <div class="header-art">
-              <h4>'.$this->titre.'</h1>
-              <p> <i>Le '.$this->date.'</i></p>
-            </div>
-            <p><b>Description :</b> '.$this->texte.'</p>
-        </div>
+  $corps = '
+  <div class="article">
+    <img src="../view/design/imgArticle/'.$this->image.'" >
+    <div>
+      <div class="header-art">
+          <h4>'.$this->titre.'</h1>
+          <p> <i>Le '.$this->date.'</i></p>
       </div>
-      ';
-      return $corps;
+          <p><b>Description :</b> '.$this->texte.'</p>
+      </div>
+    </div>
+    <div class="suppr">
+    <a href="communication.ctrl.php?action=suppr&num='.$this->id.'" >Supprimer</a>
+    </div>
+  </div>
+  ';
+}else {
+  $corps = '
+  <div class="article">
+  <img src="../view/design/imgArticle/'.$this->image.'" >
+  <div>
+  <div class="header-art">
+  <h4>'.$this->titre.'</h1>
+  <p> <i>Le '.$this->date.'</i></p>
+  </div>
+  <p><b>Description :</b> '.$this->texte.'</p>
+  </div>
+  </div>
+  ';
+}
+
+  return $corps;
   }
 
   function __construct()

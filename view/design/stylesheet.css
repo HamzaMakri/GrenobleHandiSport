@@ -1,11 +1,24 @@
+.suppr{
+text-align: center;
+margin-top: 20px;
+}
 
+.suppr>a{
+padding: 10px 20px 10px 20px;
+border: solid rgba(194, 23, 4) 1.75px;
+border-radius: 20px;
+}
 
 .article{
-  margin: 0px 0px 40px 0px;
   display: flex;
   flex-direction: row;
   padding: 0.2px;
   border: solid gray 1.3px;
+}
+
+.ligne{
+  margin: 0px 0px 40px 0px;
+
 }
 
 .article>img{

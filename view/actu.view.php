@@ -24,11 +24,11 @@ echo "$squelette->header"; //HEAD + HEADER + BALISE BODY OUVRANTE
 
     <div class="ligne">
       <?php
-      $case = $value->getcorps();
+      $case = $value->getcorps(false);
       echo "$case";
       ?>
     </div>
-    
+
   <?php endforeach; ?>
 </div>
 

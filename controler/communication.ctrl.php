@@ -2,13 +2,24 @@
 
 require_once('../framework/view.class.php');
 require_once('../model/User.class.php');
+require_once('../model/Article.class.php');
+
+
+$articlesDOA = new ArticleDOA();
+$articles = $articlesDOA->getAll();
 
 
 if (!isset($_SESSION)) {
     session_start();
 }
+if (isset($_GET['action']) && isset($_GET['num'])) {
+  if ($_GET['action'] == 'suppr' ) {
+    $num = $_GET['num'];
+    $sql = "DELETE FROM article WHERE id= $num";
+    $articlesDOA->pdo->exec($sql);
+    header('location: ../controler/communication.ctrl.php');
 
-if (isset($_FILES)) {
+  }
 }
 
   if ($_FILES && $_POST) {
@@ -44,7 +55,7 @@ if (isset($_FILES)) {
         $_SESSION['postdata'] = $_POST;
         unset($_POST);
         unset($_POST);
-        header("Location:../controler/main.ctrl.php");
+        header("Location:../controler/communication.ctrl.php");
         exit;
       }
     }
@@ -54,11 +65,9 @@ if (isset($_FILES)) {
   }
 
   $view = new View('communication.view.php');
+  $view->assign('articles',$articles);
 
   $view->display("communication.view.php");
 
 
   ?>
-
-  Gerer l'erreur quand : <br>
-  on ouvre l'outil d'ingenieur et qu'on supprime manuellement le required puis qu'on ne met pas de titre ou de txt ou d'image<br>
