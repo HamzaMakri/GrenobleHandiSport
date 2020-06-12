@@ -88,7 +88,6 @@ echo "$squelette->header"; //HEAD + HEADER + BALISE BODY OUVRANTE
 
     <br>
 
-    <p> <b> =============== tel quel, la page d\'inscription crée directement un compte =============== </b> <p>
 
       <br>
 
@@ -136,7 +135,7 @@ echo "$squelette->header"; //HEAD + HEADER + BALISE BODY OUVRANTE
           <label for="tel">Numero de téléphone:</label>
           <input type="tel" id="tel" name="tel" pattern="[0-9]{10}" required> <br>
 
-          <label for="certif">Certificat médical  :</label>
+          <label for="certif">Certificat médical (vous pouvez nous le remettre en main propre lors de l'entretiens) :</label>
           <input id="certif" type="file" name="certif" accept="image/*|.pdf"/>
 
         </fieldset>

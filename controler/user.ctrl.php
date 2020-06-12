@@ -123,7 +123,7 @@ if (isset($_GET['action']) ) {
       $result = $db->getPdo()->query("SELECT mail FROM inscription WHERE mail ='".$debMail."@".$finMail."'".';');
       $bddEmail = $result->fetch();
 
-      if($bddEmail['mail'] == $email ){            ///////////////// $bddEmail['email'] ??
+      if($bddEmail['mail'] == $email ){     // Si le mail est deja utilisé pour faire une demande d'inscription
         $inscriptionOK = false;
         $view->assign('inscriptionOK',$inscriptionOK);
       }
@@ -240,6 +240,7 @@ if (isset($_GET['action']) ) {
           $status = "success";
           $response = "Email is sent!";
           header("Location: ../index.php?mailsent");
+          header('location: ../controler/user.ctrl.php?insc=ok');
       } else {
           $status = "failed";
           $response = "Erreur: <br><br>" . $mail->ErrorInfo;
