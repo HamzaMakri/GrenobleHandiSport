@@ -13,15 +13,13 @@ if (isset($_GET['action'])) {
     session_destroy();
     $view = new View('user.view.php');
     $view->display("user.view.php");
-    header('location: ../controler/user.ctrl.php');
+    //header('location: ../controler/user.ctrl.php');
   }
+}else{
+
+  $view = new View('espace.view.php');
+
+  $view->display("espace.view.php");
 }
-
-
-
-$view = new View('espace.view.php');
-
-$view->display("espace.view.php");
-
 
  ?>
