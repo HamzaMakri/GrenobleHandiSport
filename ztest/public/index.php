@@ -16,7 +16,7 @@ if (isset($_SESSION['user'])) {
   //echo "connexionok";
 }else {
   $connecte = false;
-  echo "connexion pas ok";
+  //echo "connexion pas ok";
   //echo $_GET['statut'];
 }
 
@@ -86,8 +86,6 @@ if (isset($_SESSION['user'])) {
 
 ?>
 
-
-  <a href="add.php" class="calendar__button">+</a>
 
 </div>
 

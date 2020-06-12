@@ -13,7 +13,8 @@ if (isset($_GET['action'])) {
     session_destroy();
     $view = new View('acceuil.view.php');
     $view->display("acceuil.view.php");
-    //header('location: ../controler/user.ctrl.php');
+    header('location: ../controler/acceuil.ctrl.php');
+
   }
 }else{
 
