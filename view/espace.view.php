@@ -9,7 +9,10 @@ if (isset($_SESSION['user'])) {
   $connecte = false;
 
 }
-$statut=$_SESSION['user']->statut;
+
+if (isset($_SESSION['user'])) {
+  $statut=$_SESSION['user']->statut;
+}
 
 $squelette = new squelette('stylesheet.css',$connecte,'espacePerso');
 
@@ -21,9 +24,15 @@ echo "$squelette->header"; //HEAD + HEADER + BALISE BODY OUVRANTE
  <!-- ================================================ -->
 
 <?php
-echo '
-<iframe src="../ztest/public/index.php?statut='.$statut.'" style="border-width:0" width="1200" height="800" frameborder="0" scrolling="no"></iframe>
-'
+if (isset($_SESSION['user'])) {
+  echo '
+  <iframe src="../ztest/public/index.php?statut='.$statut.'" style="border-width:0" width="1200" height="800" frameborder="0" scrolling="no"></iframe>
+  ';
+}else {
+  echo '
+   <h1>PAGE INTERDITE</h1>
+  ';
+}
  ?>
 
  <!-- ================================================ -->
