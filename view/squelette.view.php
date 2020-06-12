@@ -31,7 +31,7 @@ class squelette{
         <li><a href="#" aria-haspopup="true">SPORTS</a>
         <ul class="dropdown" aria-label="submenu">
         <li><a href="../view/hockey.view.php">HOCKEY</a></li>
-        <li><a href="escrime.view.php">ESCRIME</a></li>
+        <li><a href="../view/escrime.view.php">ESCRIME</a></li>
         <li><a href="../view/paratennis.view.php">PARATENNIS</a></li>
         <li><a href="../view/torball.view.php">TORBALL</a></li>
         <li><a href="#">NATATION</a>
@@ -81,7 +81,7 @@ class squelette{
           <li><a href="#" aria-haspopup="true">SPORTS</a>
           <ul class="dropdown" aria-label="submenu">
           <li><a href="../view/hockey.view.php">HOCKEY</a></li>
-          <li><a href="escrime.view.php">ESCRIME</a></li>
+          <li><a href="../view/escrime.view.php">ESCRIME</a></li>
           <li><a href="../view/paratennis.view.php">PARATENNIS</a></li>
           <li><a href="../view/torball.view.php">TORBALL</a></li>
           <li><a href="#">NATATION</a>
@@ -182,7 +182,7 @@ class squelette{
             <li><a href="#" aria-haspopup="true">SPORTS</a>
             <ul class="dropdown" aria-label="submenu">
             <li><a href="../view/hockey.view.php">HOCKEY</a></li>
-            <li><a href="escrime.view.php">ESCRIME</a></li>
+            <li><a href="../view/escrime.view.php">ESCRIME</a></li>
             <li><a href="../view/paratennis.view.php">PARATENNIS</a></li>
             <li><a href="../view/torball.view.php">TORBALL</a></li>
             <li><a href="#">NATATION</a>
