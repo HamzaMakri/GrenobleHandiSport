@@ -11,8 +11,8 @@ session_start();
 if (isset($_GET['action'])) {
   if ($_GET['action'] == 'logout') {
     session_destroy();
-    $view = new View('user.view.php');
-    $view->display("user.view.php");
+    $view = new View('acceuil.view.php');
+    $view->display("acceuil.view.php");
     //header('location: ../controler/user.ctrl.php');
   }
 }else{

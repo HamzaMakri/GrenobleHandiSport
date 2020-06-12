@@ -1,7 +1,12 @@
 <?php
-
-if ($connecte && $_SESSION['user']->statut == 'admin'){
 require '../src/bootstrap.php';
+// if (isset($_SESSION['user'])) {
+//   $connecte = true;
+// }else {
+//   $connecte = false;
+// }
+// if ($connecte && $_SESSION['user']->statut == 'admin'){
+
   $data = [
       'date'  => $_GET['date'] ?? date('Y-m-d'),
       'start' => date('H:i'),
@@ -44,6 +49,6 @@ require '../src/bootstrap.php';
       </div>
     </form>
   </div>
-}
+
 
 <?php render('footer'); ?>

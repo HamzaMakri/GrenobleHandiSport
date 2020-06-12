@@ -49,10 +49,9 @@ if (isset($_GET['action']) ) {
         $bddStatut = $result->fetch();
 
         $_SESSION['user'] = new User($bddNom['nom'],$email,$bddId['id'],$bddStatut['statut']);
-        //var_dump($_SESSION['user']);
+
         $connexionOK = true;
-        header('location: ../controler/main.ctrl.php');
-        //var_dump($_SESSION['user']);
+        header('location: ../controler/main.ctrl.php?statut='.$bddStatut['statut'].'');
       }else{
         $connexionOK = false;
       }
@@ -210,7 +209,7 @@ if (isset($_GET['action']) ) {
       }
       $db = NULL; // pour fermer la connexion
 
-
+//=============ENVOI DE MAIL AUTOMATIQUE A CHAQUE DEMANDE D'INSCRIPTION===================
       $name= $_POST['name'];
       $objet= "Nouvelle demande d'inscription";
       $email= $_POST['email'];
