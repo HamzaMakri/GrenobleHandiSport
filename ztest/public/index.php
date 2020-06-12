@@ -9,6 +9,8 @@ if (isset($_SESSION['user'])) {
   echo $_GET['statut'];
 }
 
+}
+$statut= $_GET['statut'];
 $pdo = get_pdo();
 $events = new Calendar\Events($pdo);
 $month = new Calendar\Month($_GET['month'] ?? null, $_GET['year'] ?? null);
@@ -63,17 +65,19 @@ require '../views/header.php';
         </tr>
       <?php endfor; ?>
   </table>
-<?php
+  <?php
 
-if($_GET['statut']='admin'){
-  echo "je suis dans la boucle "; 
-   echo'
+  if($_GET['statut']='admin'){
+    echo "je suis dans la boucle ";
+  if($statut=='admin'){
+     echo'
+    <a href="add.php" class="calendar__button">+</a>
+    ';
+  }
+  ?>
+
+
   <a href="add.php" class="calendar__button">+</a>
-  ';
-}
-?>
-
-
 
 </div>
 
