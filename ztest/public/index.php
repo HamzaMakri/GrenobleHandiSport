@@ -2,13 +2,11 @@
 require '../src/bootstrap.php';
 if (isset($_SESSION['user'])) {
   $connecte = true;
-  echo "connexionok";
 }else {
   $connecte = false;
-  echo "connexion pas ok";
-  echo $_GET['statut'];
-}
 
+}
+$statut= $_GET['statut'];
 $pdo = get_pdo();
 $events = new Calendar\Events($pdo);
 $month = new Calendar\Month($_GET['month'] ?? null, $_GET['year'] ?? null);
@@ -65,8 +63,7 @@ require '../views/header.php';
   </table>
 <?php
 
-if($_GET['statut']='admin'){
-  echo "je suis dans la boucle "; 
+if($statut=='admin'){
    echo'
   <a href="add.php" class="calendar__button">+</a>
   ';

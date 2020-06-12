@@ -4,11 +4,10 @@ require_once('squelette.view.php');
 
 if (isset($_SESSION['user'])) {
   $connecte = true;
-  echo "connexion ok";
-  echo $_SESSION['user']->statut;
+
 }else {
   $connecte = false;
-  echo  "connexion pas ok ";
+
 }
 $statut=$_SESSION['user']->statut;
 
