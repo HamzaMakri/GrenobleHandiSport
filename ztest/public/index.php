@@ -2,12 +2,8 @@
 require '../src/bootstrap.php';
 if (isset($_SESSION['user'])) {
   $connecte = true;
-  echo "connexionok";
 }else {
   $connecte = false;
-  echo "connexion pas ok";
-  echo $_GET['statut'];
-}
 
 }
 $statut= $_GET['statut'];
@@ -67,14 +63,12 @@ require '../views/header.php';
   </table>
   <?php
 
-  if($_GET['statut']='admin'){
-    echo "je suis dans la boucle ";
-  if($statut=='admin'){
-     echo'
-    <a href="add.php" class="calendar__button">+</a>
-    ';
-  }
-  ?>
+if($statut=='admin'){
+   echo'
+  <a href="add.php" class="calendar__button">+</a>
+  ';
+}
+?>
 
 
   <a href="add.php" class="calendar__button">+</a>
