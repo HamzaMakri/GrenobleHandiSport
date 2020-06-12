@@ -74,7 +74,7 @@ require '../views/header.php';
         </tr>
       <?php endfor; ?>
   </table>
-<?php
+  <?php
 
 if (isset($_SESSION['user'])) {
   if (  $_SESSION['user']->statut == 'admin'){
@@ -87,6 +87,7 @@ if (isset($_SESSION['user'])) {
 ?>
 
 
+  <a href="add.php" class="calendar__button">+</a>
 
 </div>
 
