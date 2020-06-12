@@ -16,7 +16,7 @@ if (isset($_SESSION['user'])) {
   //echo "connexionok";
 }else {
   $connecte = false;
-  echo "connexion pas ok";
+  //echo "connexion pas ok";
   //echo $_GET['statut'];
 }
 
