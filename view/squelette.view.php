@@ -105,7 +105,7 @@ class squelette{
 // ===================================== AFFICHAGE QUAND CONNECTE =====================================
 //
     else {
-      $statut=$_SESSION['user']->statut;
+      //$statut=$_SESSION['user']->statut;
       $bouton = '
       <form action="../controler/espace.ctrl.php">
           <button class="espacePerso"><i class="fa fa-user"></i>Espace personnel</button>
