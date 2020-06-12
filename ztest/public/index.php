@@ -1,12 +1,25 @@
 <?php
+
+require_once('../../framework/view.class.php');
+require_once('../../model/User.class.php');
+require_once('../../model/Article.class.php');
+
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+
+
 require '../src/bootstrap.php';
 if (isset($_SESSION['user'])) {
   $connecte = true;
+  //echo "connexionok";
 }else {
   $connecte = false;
-
+  echo "connexion pas ok";
+  //echo $_GET['statut'];
 }
-$statut= $_GET['statut'];
+
 $pdo = get_pdo();
 $events = new Calendar\Events($pdo);
 $month = new Calendar\Month($_GET['month'] ?? null, $_GET['year'] ?? null);
@@ -63,11 +76,14 @@ require '../views/header.php';
   </table>
   <?php
 
-if($statut=='admin'){
-   echo'
-  <a href="add.php" class="calendar__button">+</a>
-  ';
+if (isset($_SESSION['user'])) {
+  if (  $_SESSION['user']->statut == 'admin'){
+    echo'
+    <a href="add.php" class="calendar__button">+</a>
+    ';
+  }
 }
+
 ?>
 
 
