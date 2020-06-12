@@ -23,7 +23,7 @@ class squelette{
         <div class="navbar">
         <ul>
         <li><a href="../controler/main.ctrl.php">ACCUEIL</a></li>
-        <li><a href="#" aria-haspopup="true">LA VIE AU CLUB</a>
+        <li><a href="../view/vie.view.php" aria-haspopup="true">LA VIE AU CLUB</a>
         <ul class="dropdown" aria-label="submenu">
         <li><a href="#">HISTORIQUE</a></li>
         </ul>
@@ -73,7 +73,7 @@ class squelette{
           <div class="navbar">
           <ul>
           <li><a href="../controler/main.ctrl.php">ACCUEIL</a></li>
-          <li><a href="#" aria-haspopup="true">LA VIE AU CLUB</a>
+          <li><a href="../view/vie.view.php" aria-haspopup="true">LA VIE AU CLUB</a>
           <ul class="dropdown" aria-label="submenu">
           <li><a href="#">HISTORIQUE</a></li>
           </ul>
@@ -173,7 +173,7 @@ class squelette{
             <div class="navbar">
             <ul>
             <li><a href="../controler/main.ctrl.php">ACCUEIL</a></li>
-            <li><a href="#" aria-haspopup="true">LA VIE AU CLUB</a>
+            <li><a href="../view/vie.view.php" aria-haspopup="true">LA VIE AU CLUB</a>
             <ul class="dropdown" aria-label="submenu">
             <li><a href="#">HISTORIQUE</a></li>
             </ul>
@@ -260,7 +260,7 @@ class squelette{
           <a href="https://www.instagram.com/grenoble_handisport/?hl=fr" class="fa fa-instagram"></a>
           <ul>
             <li><a href="../controler/main.ctrl.php">Accueil</a></li>
-            <li><a href="#">La vie du club</a></li>
+            <li><a href="../view/vie.view.php">La vie du club</a></li>
             <li><a href="#">Sports</a></li>
             '.$footerInscription.'
             <li><a href="../controler/user.ctrl.php">Actualités</a></li>
