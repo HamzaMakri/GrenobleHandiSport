@@ -41,23 +41,23 @@ CREATE TABLE `user`(
   mail VARCHAR(255) NOT NULL,
   mdp VARCHAR(255) NOT NULL,
   statut ENUM('adherent','benevole','admin') NOT NULL,
-  numInscript INT NOT NULL,
+  numInscript INT,
 
   PRIMARY KEY (id),
   FOREIGN KEY (numInscript) REFERENCES inscription(numInscript)
 );
 
 INSERT INTO `user`
-(`id`, `nom`, `prenom`, `mail`, `mdp`, `statut`, `numInscript`)
-VALUES (NULL, 'MAKRI', 'Hamza', 'admin@mail.com', 'azerty', 'admin', '1');
+(`id`, `nom`, `prenom`, `mail`, `mdp`, `statut`)
+VALUES (NULL, 'MAKRI', 'Hamza', 'admin@mail.com', 'azerty', 'admin');
 
 INSERT INTO `user`
-(`id`, `nom`, `prenom`, `mail`, `mdp`, `statut`, `numInscript`)
-VALUES (NULL, 'ADHERENT', 'Adherent', 'adherent@mail.com', 'azerty', 'adherent', '2');
+(`id`, `nom`, `prenom`, `mail`, `mdp`, `statut`)
+VALUES (NULL, 'ADHERENT', 'Adherent', 'adherent@mail.com', 'azerty', 'adherent');
 
 INSERT INTO `user`
-(`id`, `nom`, `prenom`, `mail`, `mdp`, `statut`, `numInscript`)
-VALUES (NULL, 'BENEVOLE', 'Benevole', 'benevole@mail.com', 'azerty', 'benevole', '3');
+(`id`, `nom`, `prenom`, `mail`, `mdp`, `statut`)
+VALUES (NULL, 'BENEVOLE', 'Benevole', 'benevole@mail.com', 'azerty', 'benevole');
 
 CREATE TABLE `inscriptionSport` (
   nomsport VARCHAR(255) NOT NULL,
@@ -82,6 +82,7 @@ CREATE TABLE `events`(
   description TEXT,
   start DATETIME NOT NULL,
   end DATETIME NOT NULL
+  PRIMARY KEY (`id`)
 );
 
 

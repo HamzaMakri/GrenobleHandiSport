@@ -15,7 +15,7 @@ class InscriptionDOA {
 
   }
 
-  public function getAll() : array {
+  public function getAll() : array { 
 
     $requete = $this->pdo->query("SELECT * FROM inscription");
 
