@@ -136,7 +136,7 @@ class squelette{
             <div class="navbar">
             <ul>
             <li><a href="../controler/main.ctrl.php">ACCUEIL</a></li>
-            <li><a href="../ztest/public/index.php">AGENDA</a></li>
+            <li><a href="../ztest/public/index.php?statut=admin">AGENDA</a></li>
             <li><a href="../controler/communication.ctrl.php">COMMUNICATION</a></li>
             <li><a href="../controler/demandes.ctrl.php" aria-haspopup="true">DEMANDES D\'INSCRIPTION</a></li>
             <li><a href="../view/utilisateurs.view.php">UTILISATEURS</a></li>
@@ -149,7 +149,7 @@ class squelette{
             <div class="navbar">
             <ul>
             <li><a href="../controler/main.ctrl.php">ACCUEIL</a></li>
-            <li><a href="../ztest/public/index.php">AGENDA</a></li>
+            <li><a href="../ztest/public/index.php?statut=adherent">AGENDA</a></li>
             <li><a href="../controler/actu.ctrl.php">ACTUALITES</a></li>
             <li><a href="#" aria-haspopup="true">CONTACT</a></li>
             </ul>
@@ -161,7 +161,7 @@ class squelette{
             <div class="navbar">
             <ul>
             <li><a href="../controler/main.ctrl.php">ACCUEIL</a></li>
-            <li><a href="../ztest/public/index.php">AGENDA</a></li>
+            <li><a href="../ztest/public/index.php?statut=benevole">AGENDA</a></li>
             <li><a href="../controler/actu.ctrl.php">ACTUALITES</a></li>
             <li><a href="#" aria-haspopup="true">CONTACT</a></li>
             </ul>
